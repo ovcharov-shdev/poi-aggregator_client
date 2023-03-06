@@ -1,0 +1,52 @@
+{% macro news_content(content, class)%}
+
+  <div class="news-content news-content_center{{' ' + class if class!=''}}">
+    <div class="news-content__image" style='background-image:url({{content.image}});'></div>
+    <h2 class="news-content__title">{{content.title}}</h2>
+    <div class="news-content__info">
+      <div class="news-content__date">{{content.date}}</div>
+      <div class="news-content__author news-content__author_admin">{{content.author}}</div>
+    </div>
+
+    <div class="news-content__editor">
+      <p>Den internasjonale bamsedagen er 27. oktober, men i opprinnelseslandet USA feires «Teddy Bear Day» av ulike grunner den 9. september hvert år. Opprinnelsen til bamsetradisjonen stammer fra 1902, med den daværende presidenten, Theodore Roosevelt, som hovedperson. Presidenten var på jakt, men nektet å skyte en liten bjørn som jaktfølget hadde fanget. Den var jaget av hunder, slått og bundet til et tre så presidenten kunne skyte den som trofé. Bjørnen ble i stedet skutt av en av presidentens jaktkamerater for å få slutt på lidelsene. Utfallet var lite hyggelig for bjørnen, men hendelsen ble starten på bamsen som kjæledyr for millioner av mennesker i (primært) USA og Europa.</p>
+
+      <p>Hendelsen ble nemlig fanget opp av pressen som berømmet presidenten for ikke å ville skyte bjørnen, og en driftig butikkeier fikk senere laget to utstoppede plysj-bjørner som han kalte «teddy-bear», siden presidentens kallenavn var Teddy. Men det var en tysk bedrift som var på rett sted til rett tid. De produserte en tøybamse med et kjedelig navn og salget gikk veldig tregt, men da de eksporterte tøybamsen til USA og kalte den «Teddy bear», ja, så var det nesten ikke grenser for hvor mange de kunne selge. Siden har millioner av teddy-bjørner sett dagens lys og blitt en del av inventaret på likeså mange barneværelser. Når den internasjonale Bamsedagen feires 27. oktober så er det fordi det var fødselsdagen til Theodore Roosevelt.</p>
+
+      <p>Hva gjør man på Bamsedagen?</p>
+
+      <p>Det er veldig individuelt, det er barnas dag, men dagen teller ellers ikke som en av de helt store internasjonale merkedager …..</p>
+
+      <p>Barna og bamsene deres er i fokus. Og det skal være en glad og morsom dag. Les en god bamsebok, det er nok av dem. Den mest kjente er Ole Brumm, som ble skrevet for over 90 år siden. Eller boken om «Bjørnen Winni» av samme forfatter, om den ekte bjørnen som ga ideen til Ole Brumm. Andre forslag er «Her er Teddy» av Jessica Walton, «God natt alle sammen» av Chris Haughton, «Vi skal på bjørnejakt» av Michael Rosen, «Verdens beste bjørnunge» av Kirsten Boie, «Lille isbjørn på gjensyn» av Hans De Beer, «Ikke vær lei deg, Willy» og «Willy vil ha kos» av David Melling, eller «Bernt Bjørn skal bade» og «Bernt Bjørn skjønner ingenting» av Daniel Napp.</p>
+
+      <p>Eller gi bamsene en skikkelig overhaling sammen med barna, vask og stell, sy på løse armer og ben, nytt knappeøye og hva som ellers trengs. Kanskje et plaster over riften bamsen har fått i armen? Eller en liten bandasje? De heldigste kan ta bamsen med til sitt lokale bibliotek eller annet arrangement som på selve dagen eller i påfølgende uke har et Bamsedag-arrangement med egen bamsesykepleier eller bamsedoktor. </p>
+
+      <p>Er det for mange bamser i huset?</p>
+
+      <p>Det er mange barn som gjerne vil ha en bamse, men som ikke har en. Som regel fordi de har måttet flytte eller flykte fra vonde opplevelser. Fretex / Frelsesarmeen, Krisesentre og asylmottak og er glade mottakere. Så får bamsen et nytt liv som oppfyller noe av intensjonen med bamsedagen, nemlig trøst og omtanke overfor andre.</p>
+
+      <p>Fretex / Frelsesarmeen tar veldig gjerne imot bamsene, lagt i lukket plastpose, i Fretex boksene som står oppstilt over hele landet. Kontakt alltid krisesenter og asylmottak først pr e-post eller telefon.</p>
+
+      <p>
+        Fretex bokser:
+        <br/>
+        <a href="https://www.fretex.no/gi-til-fretex/naermeste-fretexboks"></a>
+      </p>
+
+      <p>
+        Krisesentre i Norge:
+        <br/>
+          <a href="http://www.psynett.no/liste-over-krisesentre-i-norge/exboks"></a>
+      </p>
+
+      <p>
+        Asylmottak i Norge:
+        <br/>
+        <a href="https://www.udi.no/asylmottak/adresser-til-asylmottakene"></a>
+      </p>
+
+    </div>
+
+  </div>
+
+{% endmacro %}

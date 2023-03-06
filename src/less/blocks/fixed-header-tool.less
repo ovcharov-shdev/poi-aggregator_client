@@ -1,0 +1,118 @@
+.fixed-header-tool {
+	@media (max-width: 378px) {
+		margin-right: -7px;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&__link {
+		padding-left: 13px;
+		padding-right: 13px;
+		overflow: visible;
+		color: #ecf7ea;
+		cursor: pointer;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #ecf7ea;
+		}
+
+		&_star {
+			position: relative;
+			transition: transform .15s ease-in-out;
+			transform: translate(0, 0);
+
+			&:before { // icon star
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 24px;
+				margin: -7px 0 0;
+				color: #ebeef3;
+				text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		&_sign-in {
+			&:before { // icon sign-in
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 21px;
+				margin: -6px 0 0 0;
+				text-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+			}
+
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+
+		&_search {
+			&:before {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 23px;
+				margin: -6px 0 0 0;
+				text-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+			}
+
+			@media (max-width: 992px) {
+				padding-left: 10px;
+				padding-right: 8px;
+			}
+		}
+
+		&_hamburger {
+			display: none;
+			width: 48px;
+			height: 48px;
+			margin-top: 2px;
+			text-align: center;
+			vertical-align: top;
+			font-size: 0;
+			padding-top: 14px;
+			transition: transform 0.15s ease-in-out;
+
+			&:hover:active {
+				transform: translateY(1px);
+			}
+			
+			@media (max-width: 992px) {
+				display: inline-block;
+			}
+
+			&:after { // line 2 and 3
+				content: '';
+				display: inline-block;
+				width: 24px;
+				height: 3px;
+				background-color: #fdfdfd;
+				box-shadow: 0 7px 0 #fdfdfd, 0 14px 0 #fdfdfd;
+			}
+		}
+	}
+
+	&__badge {
+		border-radius: 12px;
+		display: block;
+		min-width: 19px;
+		height: 19px;
+		background-image: linear-gradient(to top, #f98f33 0%, #ffc940 100%);
+		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+		position: absolute;
+		top: -7px;
+		left: 28px;
+		text-shadow: 0 0 3px rgba(243, 143, 59, 0.29);
+		color: #fff;
+		font-size: 11px;
+		line-height: 12px;
+		font-weight: 600;
+		padding: 3px;
+		text-align: center;
+		white-space: nowrap;
+	}
+}

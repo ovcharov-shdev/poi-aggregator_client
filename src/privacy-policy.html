@@ -1,0 +1,84 @@
+{% extends "./templates/decorators/barnasnorge.html" %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/feedback-form.html" import feedback_form %}
+
+{% block page_title %} Beskyttelse av personopplysninger {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 2 %}
+{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container container_xs-bg-white">
+
+	<div class="content__nav content__nav_items-beetwen">
+		{{breadcrumbs(items=sitemap.home.about)}}
+		{{nav_tool(class='', for='about')}}
+	</div>
+
+	<div class="content content_about">
+		<div class="content__editor">
+			<p><strong>Beskyttelse av personopplysninger</strong></p>
+	    <p><br />BarnasNorge.no legger stor vekt p&aring; at personlige opplysninger, som nettstedet f&aring;r opplyst ved<br />bruker- og arrang&oslash;rregistrering, i forbindelse med aktivitetsforesp&oslash;rsler eller andre<br />henvendelser, behandles
+	      fortrolig og konfidensielt. BarnasNorge.no vil ikke selge eller l&aring;ne ut<br />personlig identifiserbar informasjon til noen tredjepart for noe form&aring;l. Bes&oslash;kende p&aring; siden<br />skal likevel huske p&aring; at informasjon som
+	      overf&oslash;res via internett ikke kan sikres helt.</p>
+	    <p><br />BarnasNorge.no samler inn og bruker informasjon om atferden til bes&oslash;kende p&aring; hjemmesiden<br />til statistiske form&aring;l. Det kan v&aelig;re antall bes&oslash;kte sider, bes&oslash;kstid, menyvalg, hvilken URL<br />(hjemmeside)
+	      du kom fra, eller den neste URL du bes&oslash;ker etter BarnasNorge.no, uansett om<br />disse URL&rsquo;ene er lenket til BarnasNorge.no eller ikke er det. Vi innsamler ikke opplysninger<br />som kan identifisere deg som person. Form&aring;let med
+	      &aring; samle informasjonen er &aring; kunne forbedre og m&aring;lrette BarnasNorge.no mot brukerne. Se i &oslash;vrig avsnittet om Informasjonskapsler</p>
+	    <p><br />Hjemmesiden innest&aring;r ikke for fortrolig og konfidensiell behandling av personlige opplysninger p&aring; andre hjemmesider enn BarnasNorge.no. &Aring;pner du en lenke fra BarnasNorge.no<br />til en ekstern hjemmeside er den eksterne
+	      hjemmesiden uten for BarnasNorge.no&rsquo;s kontroll.<br />BarnasNorge.no p&aring;tar seg ikke ansvar for innholdet av disse eksterne hjemmesidene, eller<br />omfang eller bruk av informasjon som de eksterne hjemmesidene innsamler om
+	      bes&oslash;kende p&aring;<br />sidene. Personlig informasjon som du gir til disse eksterne hjemmesidene er p&aring; eget ansvar og<br />BarnasNorge.no uvedkommende.</p>
+	    <p><br />Vi &oslash;nsker at du gj&oslash;r andre oppmerksom p&aring; BarnasNorge.no. Det kan du gj&oslash;re under menypunktet &rdquo;Fortell en venn om BarnasNorge.no&rdquo;. For &aring; bruke denne ber vi om mottakerens navn<br />og e-post
+	      adresse, og avsenders e-post adresse. Opplysningene gjemmes ikke, de blir kun<br />brukt til &aring; sende denne ene e-posten.</p>
+	    <p><br />Har du registrert deg som bruker p&aring; BarnasNorge.no kan du n&aring;r som helst be om &aring; bli slettet i<br />databasen ved &aring; sende en e-post til <a href="mailto:post@barnasnorge.no">post@barnasnorge.no</a></p>
+	    <h6><br />Oppdatert 9. desember 2014</h6>
+	    <p>&nbsp;</p>
+	    <p><strong>Informasjonskapsler (cookies)</strong></p>
+	    <p><br />Fra 1. juli 2013 m&aring; alle nettsider innhente samtykke fra brukerne hvis nettstedet bruker<br />informasjonskapsler (cookies). Den s&aring;kalte &laquo;Cookie-paragrafen&raquo; finnes i &sect;2-7 b i &laquo;Lov om<br />elektronisk
+	      kommunikasjon (ekomloven)&raquo;</p>
+	    <p><br />En cookie er en liten tekstfil, som lagres p&aring; din computer, mobile enhet, eller annet it utstyr<br />n&aring;r du bes&oslash;ker et nettsted, som BarnasNorge.no. Informasjonskapselen gj&oslash;r at<br />BarnasNorge.no gjenkjenner
+	      nettleseren din (InternetExplorer, Google Chrome, Safari etc.)<br />neste gang du bes&oslash;ker oss. Cookies kan ikke se hvem du er, hva du heter, hvor du bor eller<br />om computeren brukes av en eller flere personer. Filen kan heller ikke spre
+	      computervirus<br />eller andre skadelige programmer. Informasjonskapsler brukes av stort sett alle nettsteder</p>
+	    <p><br />Hvorfor cookies?</p>
+	    <p><br />BarnasNorge.no &oslash;nsker &aring; innsamle statistikk om bruken av nettstedet. Dette gj&oslash;r vi for<br />l&oslash;pende &aring; kunne se utviklingen i bes&oslash;ksantallet, og hvordan brukerne &laquo;oppf&oslash;rer&raquo; seg
+	      n&aring;r de<br />bes&oslash;ker BarnasNorge.no. For eksempel hvor mye tid som brukes p&aring; nettstedet, hvor mange<br />sider hver bruker &aring;pner, hva det blir s&oslash;kt mest p&aring; m.m. P&aring; den m&aring;ten kan vi l&oslash;pende
+	      forbedre<br />brukervennligheten og funksjonaliteten. For eksempel ved &aring; fjerne sider som blir lite bes&oslash;kt,<br />eller se hvordan nye sider blir mottatt, eller gj&oslash;re navigeringen enklere hvis vi ser at mange<br />bes&oslash;kende
+	      &laquo;gir opp&raquo; det samme stedet etc</p>
+	    <p><br />Informasjonskapsler er et verkt&oslash;y som henter og registrerer informasjon fra nettstedet,<br />og ikke fra brukernes computere, mobile enheter eller annet it-utstyr<br />Det er kun administrator av nettstedet BarnasNorge.no og dennes
+	      medarbeidere, som har<br />adgang til, og bruker, opplysningene som innsamles gjennom cookies</p>
+	    <p><br />G&aring;r du videre fra velkomstsiden p&aring; nettstedet BarnasNorge.no aksepterer du informasjonskapsler i nettleseren din. I motsatt fall, og hvis du allikevel vil fortsette &aring; bes&oslash;ke nettstedet,<br />kan du g&aring; inn og
+	      endre innstillingene i nettleseren. Du kan velge om du vil blokkere for at<br />informasjonskapslene blir nedlastet automatisk, eller du kan velge &aring; f&aring; et valg om &aring; laste ned<br />hver enkelt cookie. Vi gj&oslash;r imidlertid
+	      oppmerksom p&aring; at dette kan medf&oslash;re at nettsidene ikke<br />fungerer optimalt.</p>
+	    <p><br />Alle nettlesere tillater at man sletter cookies enkeltvis eller alle p&aring; en gang. Hvordan man gj&oslash;r<br />det avhenger av den nettleseren man bruker.</p>
+	    <p><br />Lenke til hjelpeside for sletting av cookies::<br /><a href="http://www.nettvett.no/personvern/informasjonskapsler-cookies">http://www.nettvett.no/personvern/informasjonskapsler-cookies</a> med undermenyene</p>
+	    <p>&nbsp; &nbsp; - Slik sletter du informasjonskapsler / cookies og<br />&nbsp; &nbsp; - Slik avviser du informasjonskapsler / cookies</p>
+			<br/>
+		</div>
+
+
+		<div class="content__about-footer">
+
+			<div class="content__footer-text">
+				BarnasNorge.no
+				<br />
+				v/ Firma Peter F Tschudi Org.nr. 887414432Tschudi
+			</div>
+			<div class="content__footer-text">
+				Tuengen allé 6C
+				<br />
+				0374 Oslo
+			</div>
+			<a class="content__footer-link" href="<a href=mailto:post@barnasnorge.no">post@barnasnorge.no</a>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

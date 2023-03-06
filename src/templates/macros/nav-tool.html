@@ -1,0 +1,28 @@
+{% macro nav_tool(class, for='') %}
+	{% if for == 'newspage' %}
+		<ul class="nav-tool nav-tool_extended{{' ' + class if class}}">
+			<li class="nav-tool__item">
+				<a href="javascript:void(0)" class="nav-tool__link nav-tool__link_gray icon icon_eye" title="">435</a>
+			</li>
+			<li class="nav-tool__item nav-tool__item_pull_left">
+				<a href="javascript:void(0)" class="nav-tool__link nav-tool__link nav-tool__link_gray icon icon_share" title="">Share</a>
+			</li>
+			<li class="nav-tool__item hidden-md"><a href="javascript:void(0)" class="nav-tool__link nav-tool__link_gray icon icon_print " title="">Print</a></li>
+			<li class="nav-tool__item hidden-md"><a href="javascript:void(0)" class="nav-tool__link nav-tool__link_gray icon icon_pdf-doc " title="">PDF</a></li>
+		</ul>
+	{% elif for === 'about' %}
+		<ul class="nav-tool nav-tool_extended1{{' ' + class if class}}">
+			<li class="nav-tool__item hidden-md nav-tool__item_pull_left">
+				<a href="javascript:void(0)" class="nav-tool__link nav-tool__link nav-tool__link_gray icon icon_share" title="">Share</a>
+			</li>
+			<li class="nav-tool__item hidden-md"><a href="javascript:void(0)" class="nav-tool__link nav-tool__link_gray icon icon_print " title="">Print</a></li>
+		</ul>
+	{% else %}
+		<ul class="nav-tool{{' ' + class if class}}">
+			<li class="nav-tool__item">
+				<a href="javascript:void(0)" class="nav-tool__link icon icon_share" title="">Share</a>
+			</li>
+			<li class="nav-tool__item hidden-md"><a href="javascript:void(0)" class="nav-tool__link icon icon_print" title="">Print</a></li>
+		</ul>
+	{% endif %}
+{% endmacro %}

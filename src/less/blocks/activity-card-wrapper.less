@@ -1,0 +1,87 @@
+.activity-card-wrapper {
+	position: relative;
+	perspective: 600px;
+
+	@media (max-width: 767px) {
+		cursor: pointer;
+	}
+
+	&__inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		transform-origin: center center;
+		transition: transform 1s;
+
+		@media (max-width: 767px) {
+			cursor: pointer;
+		}
+
+		&_flipped {
+			transform: rotateY(180deg);
+
+			@media (max-width: 767px) {
+				.activity-card__type {
+					transform: translateY(50%) rotateY(180deg);
+					transition: .3s;
+				}
+			}
+		}
+
+		&_loading {
+			.activity-card-wrapper__back{
+				z-index: -1;
+			}
+
+			.activity-card__loader {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+
+			.activity-card__loader:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background: #ddd;
+			}
+
+			.activity-card__loader:before {
+				content: "\e90e";
+				.icomoon();
+				position: absolute;
+				animation-name: rotate;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				font-size: 30px;
+				top: 47.5%;
+				left: 47.5%;
+				z-index: 6;
+			}
+
+
+			iframe {
+				visibility: hidden;
+			}
+
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 20px;
+
+		.activities-list_modaled & {
+			margin-bottom: 11px;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,154 @@
+.map-marker {
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	font-family: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+	user-select: none;
+
+	&_active { // .map-marker_active
+		z-index: 200;
+	}
+
+	&_point {
+		width: 45px;
+		height: 45px;
+		background-color: #4798f3;
+		box-shadow: 0 3px 14.4px 0.6px rgba(55, 126, 253, 0.7);
+		border-radius: 23px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&_not-focused {
+
+	}
+
+	&__pin {
+		display: block;
+		width: 40px;
+		height: 60px;
+		filter: drop-shadow(0 -2px 4px rgba(0,0,0,.25));
+		position: relative;
+		z-index: 100;
+
+		&_appointment { // .map-marker__pin_appointment
+			
+		}
+
+		&_closed { // .map-marker__pin_closed
+
+		}
+
+		&_sm {
+			width: 28px;
+			height: 42px;
+		}
+	}
+
+	&__label {
+		display: inline-block;
+		height: 17px;
+		min-width: 17px;
+		position: absolute;
+		z-index: 150;
+		top: 2px;
+		left: 26px;
+		background-color: #ff5959;
+		border: 1px solid #ffa8a8;
+		border-radius: 9px;
+		box-shadow: 0 2px 4.8px 0.2px rgba(0, 0, 0, 0.2);
+		color: #fff;
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 16px;
+		padding: 0 4px;
+		text-transform: uppercase;
+
+		.map-marker_not-focused & {
+			top: 0px;
+			left: 20px;
+		}
+	}
+
+	&__back {
+		fill:#4798F3;
+
+		.map-marker__pin_appointment & {
+			fill: #ff9444;
+		}
+
+		.map-marker__pin_closed & {
+			fill: #abb1c7;
+		}
+
+		.map-marker__pin_sm & {
+			fill: #7aa8ec;
+		}
+
+		.map-marker__pin_sm.map-marker__pin_appointment & {
+			fill: #ffad6f;
+		}
+
+		.map-marker__pin_sm.map-marker__pin_closed & {
+			fill: #bbc2da;
+		}
+	}
+
+	&__border {
+		fill:none;
+		stroke:#FFFFFF;
+		stroke-width:2;
+		stroke-linejoin:round;
+	}
+
+	&__card {
+		position: absolute;
+		z-index: 1;
+		bottom: 12px;
+		left: 22px;
+		transition: transform .15s ease-in-out;
+		transform-origin: bottom left;
+
+		.map-marker_active & {
+			transform: translate(-136px, -39px);
+		}
+
+		.map-marker_not-focused & {
+			bottom: 9px;
+			left: -110px;
+			transform-origin: bottom center;
+			transform: scale(0);
+		}
+
+		.map-marker_active.map-marker_not-focused & {
+			transform: scale(1) translate(-12px, -30px);
+		}
+	}
+
+	&__arrangement-box {
+		overflow: hidden;
+		max-height: 0;
+		padding-top: 0;
+		margin-top: 0;
+		transition: max-height .15s ease-in-out;
+		background-color: rgba(255, 255, 255, 0.85);
+		// border: 2px solid #fff;
+		border-radius: 0 0 5px 5px;
+		box-shadow: 0.7px 0.7px 4px rgba(0, 0, 0, 0.1);
+		position: relative;
+		z-index: 1;
+
+		.map-marker_active & {
+			max-height: 186px;
+			overflow-y: auto;
+		}
+	}
+
+	&__point-label {
+		color: #fff;
+		font-size: 21px;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+}

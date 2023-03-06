@@ -1,0 +1,131 @@
+{% macro footer(is_logged, is_collapse = false, nav, nav_index ) %}
+{# type = "xl | lg | md | sm" #}
+	<footer class="footer{{" footer_collapsed" if is_collapse}}">
+
+		<section class="footer__top">
+			<nav class="footer__top-nav container">
+				<ul class="footer-nav">
+					{% for nav_item in nav %}
+						<li class="footer-nav__item">
+							<a href="{{nav_item.url}}" class="footer-nav__link{{" footer-nav__link_active" if loop.index == nav_index }}" title="{{nav_item.title}}">
+								{{nav_item.name}}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+
+				<ul class="footer__tool footer-nav footer-links">
+					<li class="footer-links__item">
+						<a href="javascript:void(0)" class="footer-nav__link footer-links__link footer-links__link_greating">
+							WELCOME
+						</a>
+						<a href="javascript:void(0)" class="footer-links__link footer-links__link_closer icon icon_cross"></a>
+					</li>
+
+					<li class="footer-links__item">
+						<a href="javascript:void(0)" class="footer-nav__link footer-links__link footer-links__link_sign-in icon icon_sign-in">
+							Sign In <span class="hidden-md">/ Sign Up</span>
+						</a>
+					</li>
+
+					<li class="footer-links__item hidden-lg">
+						<a href="https://www.facebook.com/pages/BarnasNorgeno/752814488118903" class="footer-nav__link footer-links__link footer-links__link_facebook icon icon_fb" target="_blank">Find us on Facebook</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<div class="container">
+			<section class="footer__middle author-speech">
+				<span class="author-speech__img"></span>
+				<p class="author-speech__txt">
+					<span class="author-speech__ttl">Hi, I’m Alex Peterson! I’m founder of BarnasNorge.no.</span>
+					I want to tell you about my project. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.<br>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.
+					<a href="javascript:void(0)" class="author-speech__closer icon icon_cross" title="Collapse opening speech" id="js_footer_collapser"></a>
+				</p>
+			</section>
+
+			<section class="footer__bottom">
+				<div class="footer__logo-block">
+					<p class="logo logo_footer">
+						<a href="#" class="logo__link logo__link_footer" title="Go to home page">
+							BarnasNorge.no
+							<span class="logo__slogan logo__slogan_footer">En aktivitetsportal for Dere MED BARN i Alderen 0-15 ar.</span>
+						</a>
+					</p>
+					<p class="footer__copyrights">
+						© 2013-2018 BarnasNorge.no · <a href="mailto:post@barnasnorge.no" class="footer__mail-link" title="Write us a letter">post@barnasnorge.no</a>
+					</p>
+				</div>
+				<div class="footer__links-block">
+					<nav class="footer-nav-block">
+						<p class="footer-nav-block__ttl">For families</p>
+						<ul class="footer-nav-block__links-box">
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									All activities
+								</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									Popular activities
+								</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									Featured activities
+								</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									News
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer-nav-block">
+						<p class="footer-nav-block__ttl">Information</p>
+						<ul class="footer-nav-block__links-box">
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">About Us</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">Terms of Use</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">Privacy Policy</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">Contact Us</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer-nav-block">
+						<p class="footer-nav-block__ttl">For companies</p>
+						<ul class="footer-nav-block__links-box">
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									Create new activity
+								</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link" title="">
+									Advertising
+								</a>
+							</li>
+							<li class="footer-nav-block__item">
+								<a href="#" class="footer-nav-block__link footer-nav-block__link_highling icon icon_sign-in" title="">
+									SIGN IN / SIGN UP
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+		</div>
+		
+		<section class="footer__bg"></section>
+	</footer>
+{% endmacro %}

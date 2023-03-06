@@ -1,0 +1,24 @@
+.weather-spinner {
+	width: 140px;
+	height: 100px;
+
+	@media (max-width: 767px) {
+		width: 70px;
+		height: 50px;
+	}
+
+	&__wings {
+		transform-origin: 223px 210px;
+		animation-name: rotate;
+		animation-duration: .5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	&__wind {
+		animation-name: wind;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+}

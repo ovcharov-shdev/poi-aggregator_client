@@ -1,0 +1,86 @@
+.activity-address {
+	&__label {
+		display: block;
+		text-transform: uppercase;
+		color: #b3b3b3;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 1.2px;
+		vertical-align: middle;
+		margin-bottom: 6px;
+
+		&:before { // icon map
+			color: #abb1c7;
+			font-size: 15px;
+			vertical-align: middle;
+			margin: -3px 7px 0 0;
+
+			@media (max-width: 992px) {
+				margin-right: 3px;
+			}
+
+			@media (max-width: 767px) {
+				font-size: 14px;
+				color: #a9aeb8;
+				margin: -3px 3px 0 0;
+			}
+
+			@media (max-width: 490px) {
+				font-size: 12px;
+				color: #a9aeb8;
+				margin: -3px 2px 0 0;
+			}
+		}
+
+		@media (max-width: 767px) {
+			color: #62656b;
+			font-size: 12px;
+			font-weight: 500;
+			margin: 0;
+		}
+
+		@media (max-width: 490px) {
+			color: #62656b;
+			font-size: 10px;
+			font-weight: 500;
+			margin: 0;
+		}
+	}
+
+	&__label-txt {
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+
+	&__label-city {
+		@media (min-width: 993px) {
+			display: none;
+		}
+	}
+
+	&__value {
+		color: #62656b;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+		background-image: linear-gradient(to top, rgba(0,0,0,0) 3px, lighten(#62656b,35%) 3px, lighten(#62656b,35%) 4px, rgba(0,0,0,0) 4px);
+		background-position: 0 10px;
+		background-repeat: repeat-x;
+		transition: background-position .15s ease-in-out;
+
+		.activity-address:hover & {
+			&:hover,
+			&:active,
+			&:focus {
+				color: #333;
+				background-position: 0 0;
+			}
+		}
+
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+}

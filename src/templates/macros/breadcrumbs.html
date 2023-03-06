@@ -1,0 +1,12 @@
+{% macro breadcrumbs(items, class='')%}
+<nav class="breadcrumbs{{' ' + class if class!=''}}">
+	<ol class="breadcrumbs__list" itemtype="http://schema.org/BreadcrumbList">
+		{% for item in items %}
+			<li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a href="#" class="breadcrumbs__link" title="" itemtype="http://schema.org/Thing" itemprop="item"><span itemprop="name">{{item}}</span></a>
+				<meta itemprop="position" content="{{loop.index}}" />
+			</li>
+		{% endfor %}
+	</ol>
+</nav>
+{% endmacro %}

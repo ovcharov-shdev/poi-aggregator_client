@@ -1,0 +1,153 @@
+{% extends "./templates/decorators/_base.html"  %}
+
+{% block page_title %}
+	{{ title.main }}
+{% endblock %}
+
+{% block page_body %}
+<div class="container">
+	<section class="index-ready-status">
+		<a name="frontpage"></a>
+		<h1 class="index-hdr">Main Pages</h1>
+		<ul class="index-list">
+			<li class="index-item"><a class="index-link" href="./main001.html">Frontpage</a></li>
+			<li class="index-item"><a class="index-link" href="./activity001.html">Activity Page</a></li>
+			<li class="index-item"><a class="index-link" href="./main001_logged.html">User was logged in</a></li>
+			<li class="index-item"><a class="index-link" href="arrangement.html">Arrangement List</a></li>
+			<li class="index-item"><a class="index-link" href="arrangement002.html">Arrangement List (Search process)</a></li>
+			<li class="index-item"><a class="index-link" href="./on-map.html">On Map</a></li>
+			<li class="index-item"><a class="index-link" href="./informer.html">Informer</a></li>
+			<li class="index-item"><a class="index-link" href="./areyourhere.html">Are you here?</a></li>
+		</ul>
+
+	</section>
+
+	<section class="index-notready-status">
+		<a name="news"></a>
+		<h1 class="index-hdr">News</h1>
+		<ul class="index-list">
+			<li class="index-item"><a class="index-link" href="./news.html">News List</a></li>
+			<li class="index-item"><a class="index-link" href="./news-page.html">News Page</a></li>
+		</ul>
+
+		<a name="static"></a>
+		<h1 class="index-hdr">Static Pages</h1>
+		<ul class="index-list">
+			<li class="index-item"><a class="index-link" href="./about-us.html">About Us</a></li>
+			<li class="index-item"><a class="index-link" href="./terms-of-using.html">Terms of Using</a></li>
+			<li class="index-item"><a class="index-link" href="./privacy-policy.html">Privacy Policy</a></li>
+		</ul>
+
+		<a name="modal"></a>
+		<h1 class="index-hdr">Modal Pages</h1>
+		<ul class="index-list">
+			<li class="index-item"><a class="index-link" href="./modal_sign-01.html">Log In</a></li>
+			<li class="index-item"><a class="index-link" href="modal_sign-02.html">Sign Up</a></li>
+			<li class="index-item"><a class="index-link" href="modal_sign-03.html">Password Restore</a></li>
+			<li class="index-item"><a class="index-link" href="./modal_favorite.html">Favorite</a></li>
+		</ul>
+	</section>
+</div>
+
+
+
+	<style>
+	.index-hdr {
+		font-size: 20px;
+		margin: 15px 0;
+	}
+
+	.index-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding: 15px;
+		margin: 0 -15px 15px;
+		background-color: #fafafa;
+		border-radius: 4px;
+	}
+
+	.index-link {
+		display: inline-flex;
+		font-weight: 400;
+		width: 220px;
+		height: 50px;
+		margin: 7px;
+		border: 1px solid #000;
+		padding: 10px 20px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
+		text-align: center;
+		text-decoration: none;
+		transition: color ease-in-out .15s, background-color ease-in-out .15s;
+	}
+
+	.index-link_disabled {
+		opacity: .4;
+		pointer-events: none;
+	}
+
+	.index-link:hover {
+		border: 1px solid #000;
+		background-color: #000;
+		color: #fafafa;
+		text-decoration: none;
+	}
+
+	.index-ready-status {
+		position: relative;
+	}
+
+	.index-ready-status:before {
+		content: '';
+		display: block;
+		width: 7px;
+		background-color: #7fdc72;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -35px;
+		border-radius: 3px 0 0 3px;
+	}
+
+	.index-ready-status:after {
+		content: 'Ready';
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #ccc;
+		position: absolute;
+		top: 0;
+		left: -26px;
+	}
+
+	.index-notready-status {
+		position: relative;
+	}
+
+	.index-notready-status:before {
+		content: '';
+		display: block;
+		width: 7px;
+		background-color: #ffcba5;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -35px;
+		border-radius: 3px 0 0 3px;
+	}
+
+	.index-notready-status:after {
+		content: 'Coming soon';
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #ccc;
+		position: absolute;
+		top: 0;
+		left: -26px;
+	}
+</style>
+{% endblock %}

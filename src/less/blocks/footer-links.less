@@ -1,0 +1,98 @@
+.footer-links {
+	margin-right: -13px;
+
+	@media (max-width: 690px) {
+		display: flex;
+		flex-direction: row-reverse;
+		flex-grow: 1;
+		justify-content: space-between;
+		margin-right: 0;
+
+	}
+
+	&__item {
+		&:not(:first-child) {
+			margin-left: 20px;
+		}
+	}
+
+	&__link {
+		position: relative;
+		padding-left: 33px;
+
+		&_greating {
+			display: none;
+			padding-left: 46px;
+
+			&:before { // icon
+				content: '';
+				display: block;
+				width: 34px;
+				height: 34px;
+				border-radius: 17px;
+				border: 2px solid #7d8191;
+				background: #abb1c7 url(../images/owner.jpg) 50% 50% / cover no-repeat;
+				position: absolute;
+				left: 0;
+				top: 6px;
+				font-size: 20px;
+				opacity: .5;
+				transition: opacity .15s ease-in-out;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				&:before { // icon
+					opacity: .7;
+				}
+			}
+
+			.footer_collapsed & {
+				display: block;
+			}
+		}
+
+		&_sign-in {
+			&:before { // icon
+				position: absolute;
+				left: 0;
+				top: 12px;
+				font-size: 20px;
+			}
+		}
+
+		&_facebook {
+			&:before { // icon
+				position: absolute;
+				left: 5px;
+				top: 12px;
+				font-size: 20px;
+			}
+		}
+
+		&_closer {
+			display: inline-block;
+			padding-top: 6px;
+
+			&:before { // icon close
+				color: #b0b0b0;
+				font-size: 34px;
+			}
+
+			@media (min-width: 691px) {
+				display: none;
+			}
+
+			.footer_collapsed & {
+				display: none;
+			}
+		}
+	}
+
+	&_collapsed & {
+		@media (max-width: 690px) {
+			flex-direction: row
+		}
+	}
+}

@@ -1,0 +1,138 @@
+.activities-list {
+	margin: 35px 0 0;
+
+	@media (max-width: 767px) {
+		margin: 15px 0;
+	}
+
+	&_modaled {
+		margin-top: 0;
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+		&_arrangement {
+			margin-bottom: 40px;
+
+			@media (max-width: 767px) {
+				display: flex;
+			}
+		}
+	}
+
+	&__main {
+		padding: 40px 0 20px;
+
+		@media (max-width: 767px) {
+			padding: 0 0 15px;
+			max-width: 378px;
+			margin: 0 auto;
+		}
+
+		.activities-list_modaled & {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__main-area {
+		flex-grow: 1;
+
+		&_pull-left {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+
+			@media (max-width: 767px) {
+				justify-content: center;
+			}
+		}
+	}
+
+	&__tool-area {
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	&__ttl {
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+		color: #5c96ec;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: relative;
+		margin-bottom: 15px;
+		border-left: 5px solid #5c96ec;
+		border-radius: 2px 0 0 2px;
+		letter-spacing: 1px;
+		line-height: 18px;
+		
+		&:after { // line
+			content: '';
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 50%;
+			margin-top: -1px;
+			background-color: #adcaf5;
+		}
+
+		&_inform {
+			color: #5c96ec;
+			border-color: #5c96ec;
+
+			&:after { // line
+				background-color: #adcaf5;
+			}
+		}
+
+		&_warning {
+			color: #f7cb59;
+			border-color: #f7cb59;
+
+			&:after { // line
+				background-color: #fbe5ac;
+			}
+		}
+
+		&_disable {
+			color: #c7cbd6;
+			border-color: #d9dce7;
+
+			&:after { // line
+				background-color: #eaebf0;
+			}
+		}
+
+		@media (min-width: 993px) {
+			display: none;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__ttl-txt {
+		padding: 0 8px;
+		background-color: #f7f8fa;
+		position: relative;
+		z-index: 5;
+	}
+}

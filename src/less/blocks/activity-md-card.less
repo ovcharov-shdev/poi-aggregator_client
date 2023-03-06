@@ -1,0 +1,154 @@
+.activity-md-card {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+
+	&__box {
+		position: relative;
+	}
+
+	&__pic {
+		height: 200px;
+		background-size: cover;
+		background-position: center center;
+		border-radius: 0 14px 0 0;
+	}
+
+	&__fav-link {
+		position: absolute;
+		z-index: 10;
+		top: -15px;
+		right: -15px;
+		width: 61px;
+		height: 60px;
+		filter: drop-shadow(-2px 3px 6px rgba(0,0,0,.1));
+	}
+
+	&__content {
+		padding: 15px 20px 25px;
+	}
+
+	&__fav-link {
+
+	}
+
+	&__type {
+		position: absolute;
+		z-index: 10;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__ttl-container {
+		height: 47px;
+		position: relative;
+		margin: 0 -20px;
+	}
+
+	&__ttl-wrapper {
+		min-height: 47px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(255,255,255,.9);
+		padding: 10px 20px 0;
+	}
+
+	&__ttl-box {
+		font-size: 0;
+	}
+
+	&__ttl {
+		color: #333;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: 1.3px;
+		text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+		background-image: linear-gradient(to top, rgba(0,0,0,0) 3px, lighten(#333,25%) 3px, lighten(#333,25%) 4px, rgba(0,0,0,0) 4px);
+		background-position: 0 10px;
+		background-repeat: repeat-x;
+		transition: background-position .15s ease-in-out;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #333;
+			background-position: 0 0;
+		}
+	}
+
+	&__tags-box {
+		position: relative;
+		margin: 10px 0 15px;
+		height: 18px;
+	}
+
+	&__tags {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		max-height: 18px;
+		overflow: hidden;
+	}
+
+	&__description {
+		color: #9fa1a5;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 22px;
+		max-height: 66px;
+		overflow: hidden;
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__map-link {
+		display: inline-block;
+		color: #62656b;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		position: relative;
+		padding-left: 25px;
+
+		&:before { // icon
+			position: absolute;
+			top: 6px;
+			left: 0;
+		}
+	}
+
+	&__open-link {
+		color: #377efd;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 19px;
+		text-transform: uppercase;
+		position: absolute;
+		z-index: 10;
+		right: 0;
+		bottom: 0;
+		display: inline-block;
+		padding: 10px 20px 20px;
+		border-radius: 20px 0 0 0;
+		background: linear-gradient(130deg, rgba(255,255,255,0) 0, #fff 35px);
+	}
+}

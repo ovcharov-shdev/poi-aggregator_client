@@ -1,0 +1,10 @@
+{
+	"sitemap" : {
+		"home" : {
+			"news": ["Home", "News"],
+			"activity": ["Home", "AdventureRooms Oslo — Escape room"],
+			"newspage": ["Home", "News", "Stor bamseklem 27. oktober!"],
+			"about": ["Home", "About us"]
+		}
+	}
+}

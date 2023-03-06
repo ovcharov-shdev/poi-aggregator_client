@@ -1,0 +1,13 @@
+{% macro news(new, class='')%}
+  <div class="news{{' ' + class if class!=''}}">
+    <div class="news__image" style="background-image:url({{new.image}})"></div>
+    <div class="news__box">
+      <div class="news__title">{{new.title}}</div>
+      <div class="news__text">{{new.text}}</div>
+      <div class="news__info">
+        <div class="news__date">{{new.date}}</div>
+        <a href="javascript:void(0)" class="news__link">more</a>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,32 @@
+{% from "./tag-box.html" import tagBox %}
+{% from "./form-control/select.html" import select %}
+
+{% macro mobile_menu(class='') %}
+
+  <aside class="mobile-menu {{' ' + class if class}}">
+    <section class="mobile-menu__box">
+      <div class="mobile-menu__top">
+        <div class="mobile-menu__title">Search</div>
+        <div class="mobile-menu__close icon icon_cross" data-role='mobile-menu-close'></div>
+      </div>
+
+      <div class="mobile-menu__wrapper">
+
+        {% include "../partials/search-fields.html" %}
+
+        <p class="tag__section-ttl">Filter BY CATEGORIES &amp; OPTIONS:</p>
+        {{tagBox(data = ['Museums', 'Group'], add_label = 'Add Tags', options = ['free'] )}}
+
+        <div class="activities-list__tool-area">
+          {{ select(label = 'Sort by:', options = ['Date', 'Age', 'Popularity', 'Featured', 'Mest For', 'Activity Title', 'Period', 'Postal Code'], active_option = 1, class = 'form-select_mobile-menu form-select_expand-top') }}
+        </div>
+
+      </div>
+      <div class="mobile-menu__buttons">
+        <button class="btn btn_secondary btn_text-white" data-role='mobile-menu-close'>close</button>
+        <button class="btn btn_success">apply filters</button>
+      </div>
+    </section>
+  </aside>
+
+{% endmacro %}

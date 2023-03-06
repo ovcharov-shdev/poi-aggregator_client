@@ -1,0 +1,66 @@
+{% from "./tag-box_sm.html" import tagBox %}
+{% from "./link-menu.html" import linkMenu %}
+{% from "./activity-selector.html" import activity_selector %}
+
+{% macro activity(item, class = '') %}
+{#
+	item = {
+		img: {
+			url: '',
+			alt: '',
+			title: ''
+		},
+		open_hours: '',
+		age: '',
+		isForChildren: boolean,
+		isFavorited: boolean,
+		title: '',
+		description: '',
+		address: '',
+		footer: {
+			webisteUrl: '',
+			facebookUrl: '',
+			phones: []
+		},
+		favoriteCount: number,
+		featuredCount: number
+	}
+#}
+	<article class="activity-md-card__box{{' ' + class if class }}">
+		{{activity_selector(isForChildren = item.isForChildren, class = 'activity-md-card__type')}}
+
+		<section class="activity-md-card">
+			<a class="activity-md-card__pic" href="#" style="background-image: url({{item.img.url}});" title="{{item.img.title}}"></a>
+
+			<a href="javascript:void(0);" class="activity-md-card__fav-link favorite-md-star {{' favorite-md-star_active' if item.isFavorited}}" title="{{"Delete activity from favorite list" if item.isFavorited else "Add activity to favorite list"}}"></a>
+
+			<div class="activity-md-card__content">
+				
+				<div class="activity-md-card__ttl-container">
+					<div class="activity-md-card__ttl-wrapper">
+						<div class="activity-md-card__ttl-box">
+							<a href="#" class="activity-md-card__ttl" title="">{{item.title}}</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="activity-md-card__tags-box">
+					{{tagBox(age_tag = 'Age: ' + item.age, data = item.categories, options = item.options, add_label = 'null', class = 'activity-md-card__tags' )}}
+				</div>
+				
+				<p class="activity-md-card__description">
+					{{item.description}}
+				</p>
+				
+
+				<a href="javascript:void(0)" class="activity-md-card__map-link icon icon_map" title="Show on Map">
+					{{item.address}}<br>
+					{{item.postal_code}} {{item.city}}
+				</a>
+			
+				<a href="#" class="activity-md-card__open-link">More</a>
+
+			</div>
+		</section>
+	</article>
+{% endmacro %}

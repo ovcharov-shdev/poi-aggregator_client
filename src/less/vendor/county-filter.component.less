@@ -1,0 +1,195 @@
+.tree {
+	position: absolute;
+	z-index: 200;
+	left: 0;
+	top: 53px;
+	width: 100%;
+	height: ~"calc(100vh - 520px)";
+	opacity: 0;
+	transform-origin: top center;
+	transform: perspective(600px) rotateX(-90deg) translateY(80px);
+	transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+	pointer-events: none;
+
+	&_shown {
+		opacity: 1;
+		transform: perspective(600px) rotateX(0) translateY(0);
+		pointer-events: all;
+	}
+
+	.e-treeview {
+		-webkit-tap-highlight-color: transparent;
+		display: block;
+		overflow: hidden;
+		position: relative;
+		white-space: nowrap;
+		max-height: 100%;
+		overflow-y: auto;
+		background-color: #fcfcfc;
+		border: 1px solid #f1f1f1;
+		border-radius: 0px 0px 3px 3px;
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+		.e-ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 5px 0;
+
+			&.e-list-parent {
+				padding: 0;
+				border-top: 1px solid #e9e9e9;
+				border-bottom: 1px solid #e9e9e9;
+			}
+		}
+
+		.e-list-item {
+			list-style: none;
+			padding: 0;
+			position: relative;
+		}
+
+		.e-has-child .e-list-parent {
+			background-color: #f9f9f9;
+		}
+
+		.e-level-2 {
+			padding: 0 0 0 13px;
+		}
+
+        .e-fullrow { // highligting of list item
+        	user-select: none;
+        	border: 1px solid;
+        	-webkit-box-sizing: border-box;
+        	box-sizing: border-box;
+        	cursor: pointer;
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 42px;
+        	overflow: hidden;
+        	border-color: transparent;
+        }
+
+        &.e-fullrow-wrap .e-text-content {
+        	border-color: transparent;
+        	pointer-events: none;
+        	position: relative;
+        }
+
+        .e-list-item.e-active > .e-fullrow {
+        	background-color: #dcdee7;
+        }
+
+        .e-text-content {
+        	user-select: none;
+        	border: 1px solid;
+        	cursor: pointer;
+        	margin: 0;
+        	padding: 0;
+        }
+
+        .e-list-item div.e-icons {
+        	-webkit-transition: -webkit-transform .3s ease-in-out;
+        	border-radius: 15px;
+        	transition: -webkit-transform .3s ease-in-out;
+        	transition: transform .3s ease-in-out;
+        	transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+        }
+
+        &.e-fullrow-wrap .e-icon-collapsible, 
+        &.e-fullrow-wrap .e-icon-expandable, 
+        &.e-fullrow-wrap .e-input, 
+        .e-fullrow-wrap .e-list-url {
+        	pointer-events: auto;
+        }
+
+        .e-icon-wrapper {
+        	padding: 0;
+        	display: flex;
+        	flex-direction: row-reverse;
+        }
+
+        .e-icon-collapsible, 
+        .e-icon-expandable {
+        	display: inline-block;
+        	width: 40px;
+        	height: 40px;
+        	margin: 0;
+        	vertical-align: middle;
+        	text-align: center;
+        	line-height: 28px;
+
+        	&:hover {
+        		background-color: #eeeff4;
+        	}
+        }
+
+        .e-active {
+        	.e-icon-collapsible, 
+        	.e-icon-expandable {
+        		&:hover {
+        			background-color: #ced0d9;
+        		}
+        	}
+        }
+
+        .e-list-text {
+        	flex-grow: 1;
+        	padding: 0 7px 0 15px;
+        	line-height: 40px;
+        	overflow: hidden;
+        	text-overflow: ellipsis;
+        	white-space: nowrap;
+        	font-family: 'Poppins';
+        	font-size: 18px;
+        	color: #232631;
+
+        	div {
+        		overflow: hidden;
+        		text-overflow: ellipsis;
+        		white-space: nowrap;
+        	}
+        }
+
+        .e-list-item.e-active > .e-text-content .e-list-text {
+        	font-weight: 700; 
+        	color: #5a5c65;  
+        }
+
+        .e-list-item div.e-icons {
+        	border-radius: 0;
+        }
+
+        .e-list-item div.e-icons::before {
+        	content: "\e90b";
+        	font-family: 'iconfont';
+        	font-style: normal;
+        	font-variant: normal;
+        	font-weight: normal;
+        	line-height: 1;
+        	speak: none;
+        	text-transform: none;
+        	transition: transform .3s ease-in-out;
+        	font-size: 11px;
+        	color: #9a9a9a;
+        }
+
+        .e-list-item div.e-icon-collapsible.e-icons::before {
+        	transform: rotate(180deg);
+        }
+
+        .e-list-item .e-icons.e-icon-collapsible {
+        	transform: rotate(0);
+        }
+    }
+
+    .e-control, 
+    .e-css {
+    	font-family: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+    	font-size: 18px;
+    	font-weight: normal;
+    	-webkit-box-sizing: border-box;
+    	box-sizing: border-box;
+    }
+}

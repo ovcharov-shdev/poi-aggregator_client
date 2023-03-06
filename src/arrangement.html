@@ -1,0 +1,44 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/tag-box_link.html" import tagBox %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/activity-selector.html" import activity_selector %}
+{% from "./templates/macros/activity-card_md.html" import activity %}
+{% from "./templates/macros/arrangement-list.html" import arrangement_list %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 0 %}
+{% set is_collapse = false %}
+{% set search_county = "Møre og Romsdal" %}
+{% set search_date = "" %}
+{% set search_keywords = "" %}
+{# end header config #}
+
+{% set body_class = "clear-mobile-back" %}
+{% set is_header_full = true %}
+
+{% block content %}
+
+<div class="container">
+	<section class="content__nav">
+		{{breadcrumbs( sitemap.home.activity, 'content__breadcrumbs' )}}
+		{{nav_tool('content__nav-tools nav-tool_content')}}
+	</section>
+	
+	<article class="content content_m0">
+		<h2 class="content__ttl content__ttl_left content__ttl_alone">Arrangements in Møre og Romsdal</h2>
+		
+		<div class="content__box">
+			<main class="content__main">
+
+				{{arrangement_list(calendar = arrangement_list_calendar, arrangements = arrangements, class = 'arrangement-date__box_finished')}}
+			
+			</main>
+		</div>
+	</article>
+</div>
+{% endblock %}

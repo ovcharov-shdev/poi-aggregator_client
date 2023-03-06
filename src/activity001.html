@@ -1,0 +1,512 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/tag-box_link.html" import tagBox %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/activity-selector.html" import activity_selector %}
+{% from "./templates/macros/activity-card_md.html" import activity %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 0 %}
+{% set is_collapse = false %}
+{% set search_county = "Møre og Romsdal" %}
+{% set search_date = "" %}
+{% set search_keywords = "" %}
+{# end header config #}
+
+{% set body_class = "clear-mobile-back" %}
+
+{% block content %}
+
+<div class="container">
+	<section class="content__nav">
+		{{breadcrumbs( sitemap.home.activity, 'content__breadcrumbs' )}}
+		{{nav_tool('content__nav-tools nav-tool_content')}}
+	</section>
+	{% include "templates/partials/seo-link.html" %}
+	
+	<article class="content">
+		<h2 class="content__ttl">AdventureRooms Oslo</h2>
+
+		<span class="content__ttl-desc">Escape room</span>
+
+		{{activity_selector(isForChildren = false, class = 'content__activity-type')}}
+
+		<a href="javascript:void(0);" class="content__fav-link favorite-star" title="Add activity to favorite list"></a>
+
+		<div class="content__stats res-stats">
+			<span class="res-stats__favorited icon icon_outline-star">3</span>
+			<span class="res-stats__featured icon icon_eye">435</span>
+		</div>
+		
+		<div class="swiper" id="main_slider">
+			<div class="swiper__box">
+				<div class="swiper__slide" style="background-image: url(images/slider/001.jpg);"></div>
+				<div class="swiper__slide" style="background-image: url(images/slider/002.jpg);"></div>
+				<div class="swiper__slide" style="background-image: url(images/slider/003.jpg);"></div>
+			</div>
+			<div class="swiper__button swiper__button_next"></div>
+			<div class="swiper__button swiper__button_prev"></div>
+			<div class="swiper__pagination"></div>
+		</div>
+
+		<div class="content__box">
+			<main class="content__main">
+				<div class="content__sub-ttl">Details</div>
+				
+				{{tagBox(
+						age_tag = 'Age: 3-15+', 
+						data = [
+							'Active Family', 
+							'Quest'
+						],
+						options_iconed=[
+							{
+								icon: 'free',
+								name: 'Free'
+							},
+							{
+								icon: 'home',
+								name: 'Indoor'
+							},
+							{
+								icon: 'trees',
+								name: 'Outdoor'
+							},
+							{
+								icon: 'cake',
+								name: 'For Birthdays'
+							},
+							{
+								icon: 'book',
+								name: 'For Schoolclasses'
+							},
+							{
+								icon: 'bell',
+								name: 'For Holidays',
+								multi_tag: true
+							}
+						], 
+						add_label = 'null')}}
+			
+				<section class="expand-box">
+					<input type="checkbox" id="expand_box" class="expand-box__status">
+					<div class="expand-box__text">
+						<p>Lei av at barna sitter med nesa i nettbrettet eller mobilen? Prøv en annerledes opplevelse hos AdventureRooms Oslo. Her må barn og voksne samarbeide og bruke logisk sans for å løse spennende mysterier og knekke koder. Imens tikker klokka, og man har 60 minutter på å komme seg ut av rommet. Spillene passer for familier med barn over 9 år. AdventureRooms Oslo inneholder 3 rom med enkeltspill for mindre grupper og duellspill for større grupper. Duellspill handler om at 2 lag konkurrerer mot hverandre om hvem som kommer seg ut av rommet først</p>
+						Det finnes ingen god oversettelse på konseptet «escape room». I korthet går det ut på at en gruppe, minimum to personer, låses inn i et rom fylt med gåter som må løses innen en gitt tid, som regel 60 minutter, for å klare å slippe ut i tide. For å løse gåtene må deltakerne finne ledetråder, som i noen «escape rooms» hovedsakelig finnes gjennom dataspill-løsninger og i andre gjennom observasjon av gjenstander i rommet og praktiske oppgaver, men det aller viktigste er å samarbeide sammen som en familie for å løse alle gåtene før tiden renner ut. Løsningene kan for eksempel være å finne frem til en tallkombinasjon som åpner låsen til neste oppgave, eller tittelen på en bok som neste oppgave er gjemt i. Ved å gå fra gåte til gåte er deltakerne med i en historie og alle «escape roms» har flere historier å velge mellom. To grupper kan spille mot hverandre eller deltakerne i en gruppe er motstandere. Familier kan ha mye moro i et escape room! Barn under 16 år må være i følge med en voksen når de spiller
+						<div class="expand-box__btn-box">
+							<label for="expand_box" class="expand-box__btn">
+								<span class="expand-box__btn-text expand-box__btn-text_more">Read More</span>
+								<span class="expand-box__btn-text expand-box__btn-text_less">Less</span>
+							</label>
+						</div>
+					</div>
+				</section>
+			
+				<section class="tabbed-box">
+					<ul class="tabbed-box__tabs">
+						<li class="tabbed-box__tab-item"><a href="#" class="tabbed-box__tab-link tabbed-box__tab-link_active" title="">Work Hours</a></li>
+						<li class="tabbed-box__tab-item"><a href="#" class="tabbed-box__tab-link icon icon_calend" title="">Calendar</a></li>
+					</ul>
+					<div class="tabbed-box__data">
+						<table class="hours-table">
+							<tr class="hours-table__row hours-table__row_hdr">
+								<th class="hours-table__cell hours-table__cell_hdr">Description</th>
+								<th class="hours-table__cell hours-table__cell_hdr">Working Time</th>
+							</tr>
+
+							<tr class="hours-table__row hours-table__row_data">
+								<td class="hours-table__cell hours-table__cell_desc">Mon, Tue, Wed, Thu, Fri</td>
+								<td class="hours-table__cell hours-table__cell_time icon icon_clock">09:00 — 18:00</td>
+							</tr>
+
+							<tr class="hours-table__row hours-table__row_data">
+								<td class="hours-table__cell hours-table__cell_desc">
+									<label class="hours-table__expander">
+										<input type="checkbox" class="hours-table__input">
+										<p class="hours-table__text-box">
+											We work every second Saturday of the even week of the demi-season month from 8:11 to 10:32 on even days and from 14:52 to 15:15 on odd days. In the full moon is always a day off. One day a year we work around the clock. The date of this day is printed no later than 10 days in the annual publication Medical Herald of Rock Climbers or on this site. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus similique et rerum cum sit excepturi recusandae suscipit aperiam aspernatur nisi facilis veritatis tempora facere voluptas porro omnis molestias at quae rem tenetur velit inventore vitae, eos! Odio tenetur sequi velit illum maiores quod deserunt optio eum architecto cum quos, culpa illo animi fuga aspernatur obcaecati minima, nam, incidunt dolore deleniti minus. Aspernatur soluta, libero.
+										</p>
+										<a href="javascript:void(0)" class="hours-table__cell-opener icon icon_arrow-down" title=""><span class="hours-table__opener-more">Read more</span> <span class="hours-table__opener-less">less</span></a>
+									</label>
+								</td>
+							</tr>
+
+							<tr class="hours-table__row hours-table__row_data">
+								<td class="hours-table__cell hours-table__cell_desc">Saturday</td>
+								<td class="hours-table__cell hours-table__cell_time icon icon_clock">10:00 — 14:00</td>
+							</tr>
+
+							<tr class="hours-table__row hours-table__row_data">
+								<td class="hours-table__cell hours-table__cell_desc">Sunday</td>
+								<td class="hours-table__cell hours-table__cell_time icon icon_clock">10:00 — 12:00</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+			
+				<div class="content__sub-ttl">Arrangements</div>
+
+				{% include "templates/partials/arrangements.html" %}
+			
+				<div class="content__sub-ttl">Extra</div>
+				
+				<div class="content__extra">
+					Konseptet oppsto i Japan og har siden spredd seg med stor hastighet til hele verden. I Norge er det etablert flere «escape rooms» i alle de store og mange mindre byer
+				</div>
+
+				<button class="content__fav-btn btn btn_wide btn_iconed icon icon_star">Add to favorites</button>
+			</main>
+			
+			<aside class="content__aside">
+				<div class="content__aside-ttl">Contact Information</div>
+					<a href="tel:21 52 11 55" class="aside-link aside-link_icon_phone icon icon_phone">
+						<span class="aside-link__ttl">Phone</span>
+						<span class="aside-link__value">21 52 11 55</span>
+					</a>
+
+					<a href="mailto:oslo@adventurerooms.no" class="aside-link aside-link_ttled aside-link_icon_email icon icon_mail">
+						<span class="aside-link__ttl">Email</span>
+						<span class="aside-link__value aside-link__value_native">oslo@adventurerooms.no</span>
+					</a>
+				
+				<div class="content__aside-ttl">Links</div>
+
+				<a href="http://barnasnorge.no" class="aside-link aside-link_ttled aside-link_icon_website icon icon_website">
+					<span class="aside-link__ttl">Website</span>
+					<span class="aside-link__value aside-link__value_native">barnasnorge.no</span>
+				</a>
+
+				<section class="aside-link-list__box">
+					<a href="javascript:void(0)" class="aside-link-list__ttl aside-link-list__ttl_social">Social <span class="aside-link-list__ttl-unimportant">Network</span></a>
+					<ul class="aside-link-list">
+						<li class="aside-link-list__item">
+							<a href="#" class="aside-link-list__link aside-link-list__link_fb icon icon_facebook">
+								<span class="aside-link-list__name">Facebook</span>
+							</a>
+						</li>
+						<li class="aside-link-list__item">
+							<a href="#" class="aside-link-list__link aside-link-list__link_youtube icon icon_youtube">
+								<span class="aside-link-list__name">Youtube</span>
+							</a>
+						</li>
+						<li class="aside-link-list__item">
+							<a href="#" class="aside-link-list__link aside-link-list__link_instagram icon icon_instagram">
+								<span class="aside-link-list__name">Instagram</span>
+							</a>
+						</li>
+						<li class="aside-link-list__item">
+							<a href="#" class="aside-link-list__link aside-link-list__link_tripadviser icon icon_tripadvisor">
+								<span class="aside-link-list__name">TripAdviser</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<div class="content__aside-ttl">Brochure</div>
+
+				<a href="http://barnasnorge.no" class="aside-link aside-link_icon_pdf-doc icon icon_pdf-doc">
+					<span class="aside-link__ttl">Brochure</span>
+					<span class="aside-link__value aside-link__value_native">Download</span>
+				</a>
+				{% include 'templates/partials/ticket-info/full.html' %}
+				{% include 'templates/partials/ticket-info/half.html' %}
+				{% include 'templates/partials/ticket-info/free.html' %}
+			</aside>
+		</div>
+		<div class="content__map">
+			<aside class="map-box__info">
+				<section class="map-box__address">
+					<span class="map-box__ttl">Address</span>
+					<strong class="map-box__place">Nedre Slottsgate 23, 0157 OSLO</strong>
+					<p class="map-box__extra">As you go into the yard to go straight past the deer of the horns right into the basement</p>
+				</section>
+				<section class="map-box__weather">
+					<div class="weather">
+						{% include "./templates/partials/weather-icon/01d.svg" %}
+						<div class="weather__data">
+							<p class="weather__value">
+								<span class="weather__temp">32˚</span>
+								<span class="weather__desc">Clear sky</span>
+							</p>
+							<p class="weather__datetime">
+								<span class="weather__day">Today</span>
+								<span class="weather__time">2:35 p.m. CEST</span>
+							</p>
+						</div>
+					</div>
+					<div class="weather__spinner">
+						{% include "./templates/partials/weather-icon/wind-turbine.svg" %}
+					</div>
+					<span class="weather__progress"></span>
+				</section>
+			</aside>
+			<div id="map_canvas" class="map-box"></div>
+		</div>
+	</article>
+</div>
+
+<div class="content__ttl content__ttl_outside">Related activities</div>
+
+<div class="swiper__container">
+	<div class="swiper swiper_auto-height swiper_activity" id="relation_activities">
+		<div class="swiper__box">
+			{% for item in activities %}
+				<div class="swiper__slide">
+					{{activity(item)}}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="swiper__button swiper__button_next"></div>
+		<div class="swiper__button swiper__button_prev"></div>
+	</div>
+</div>
+{% endblock %}
+
+{% block page_footer %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkEtOz6wMuBwRqnJ7DvN_u1dS24jT5tI0"></script>
+
+<script>
+
+	var markers = [
+    {
+        lat: 59.913052,
+        lng: 10.743846,
+        type: "",
+        isActive: true,
+        imgUrl: "../images/activities/001.jpg",
+        cardTtl: "AdventureRooms Oslo — Escape room",
+        cardTime: "11:00—15:00"
+    },
+    {
+        lat: 59.903052,
+        lng: 10.763846,
+        type: "",
+        near: true,
+        isActive: false,
+        imgUrl: "../images/activities/004.jpg",
+        cardTtl: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas repellendus fuga, aliquam qui temporibus accusantium dolor, nostrum, nemo, minima quibusdam voluptate ea. Dolor laborum dolores natus veritatis necessitatibus expedita, cumque",
+        cardTime: "11:00—15:00",
+        label: 15,
+        arrangements: [
+            {
+                type: "full",
+                ttl: "Bogstad Gård - storhet i vakre omgivelser",
+                imgUrl: "../images/activities/005.jpg",
+                theDate: "16 Nov",
+                theTime: "11:00—15:00"
+            }, {
+                type: "quick",
+                ttl: "Dukketeater basert på Alf Prøysens tekster, har spilt hver basert på Alf Prøysens tekster, har spilt hver",
+                theDate: "15 Nov",
+                theTime: "14:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Bogstad Gård - storhet i vakre omgivelser",
+                imgUrl: "../images/activities/005.jpg",
+                theDate: "16 Nov",
+                theTime: "11:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Jul med Prøysen og snekker Andersen",
+                imgUrl: "../images/activities/006.jpg",
+                theDate: "15 Nov",
+                theTime: "14:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Bogstad Gård - storhet i vakre omgivelser",
+                imgUrl: "../images/activities/005.jpg",
+                theDate: "16 Nov",
+                theTime: "11:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Jul med Prøysen og snekker Andersen",
+                imgUrl: "../images/activities/006.jpg",
+                theDate: "15 Nov",
+                theTime: "14:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Bogstad Gård - storhet i vakre omgivelser",
+                imgUrl: "../images/activities/005.jpg",
+                theDate: "16 Nov",
+                theTime: "11:00—15:00"
+            }, {
+                type: "full",
+                ttl: "Jul med Prøysen og snekker Andersen",
+                imgUrl: "../images/activities/006.jpg",
+                theDate: "15 Nov",
+                theTime: "14:00—15:00"
+            }
+        ]
+    },
+    {
+        lat: 59.914632,
+        lng: 10.705104,
+        type: "appointment",
+        near: true,
+        isActive: false,
+        imgUrl: "../images/activities/002.jpg",
+        cardTtl: "Tertitten — Urskog-Hølandsbanen",
+        cardTime: "11:00—15:00"
+    },
+    {
+        lat: 59.923052, 
+        lng: 10.758846,
+        type: "closed",
+        near: true,
+        isActive: false,
+        imgUrl: "../images/activities/003.jpg",
+        cardTtl: "Alna Ridesenter",
+        cardDate: "16 Nov",
+        cardTime: "11:00—15:00"
+    },
+    {
+        lat: 59.900052, 
+        lng: 10.720846,
+        type: "point",
+        isActive: false,
+        cardTtl: "5"
+    }
+]
+
+
+var overlay = [];
+HTMLMarker.prototype = new google.maps.OverlayView();
+
+function initMap() {
+    var myLatLng = new google.maps.LatLng(59.913052, 10.743846);
+    var mapOptions = {
+        zoom: 14,
+        center: myLatLng,
+        gestureHandling: 'cooperative',
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.READMAP
+    };
+    
+    var gmap = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    
+    for (i=0;i<markers.length;i++) {
+        overlay.push(new HTMLMarker(markers[i].lat, markers[i].lng, gmap, markers[i]));
+    }
+}
+
+window.onload = initMap();
+
+
+function HTMLMarker(lat,lng, map, item){
+    this.lat_ = lat;
+    this.lng_ = lng;
+    this.pos_ = new google.maps.LatLng(lat,lng);
+    this.map_ = map;
+    this.div_ = null;
+    this.item_ = item;
+    this.setMap(map);
+}
+
+HTMLMarker.prototype.onAdd= function() {
+    var label = (this.item_.label && this.item_.label>0)?`
+        <mark class="map-marker__label">${this.item_.label}</mark>
+    `:'';
+
+    var arrangements = '';
+    if (this.item_.arrangements) {
+        for (let i = 0; i < this.item_.arrangements.length; i++) {
+            if (this.item_.arrangements[i].type == "full") {
+                arrangements += `
+                    <section class="map-card map-card_active map-card_arrangement">
+                        <div class="map-card__img" style="background-image: url(${this.item_.arrangements[i].imgUrl})"></div>
+                        
+                        <div class="map-card__data">
+                            <strong class="map-card__ttl">${this.item_.arrangements[i].ttl}</strong>
+                            <p class="map-card__extra">
+                                <span class="map-card__date">${this.item_.arrangements[i].theDate}</span>
+                                <span class="map-card__time icon icon_clock">${this.item_.arrangements[i].theTime}</span>
+                                <a href="#" class="map-card__link">More</a>
+                            </p>
+                        </div>
+                    </section>`;
+            }
+            else {
+                arrangements += `
+                    <section class="map-card map-card_active map-card_arrangement">
+                        <div class="map-card__data">
+                            <strong class="map-card__ttl map-card__ttl_desc">${this.item_.arrangements[i].ttl}</strong>
+                            <p class="map-card__extra">
+                                <span class="map-card__date">${this.item_.arrangements[i].theDate}</span>
+                                <span class="map-card__time icon icon_clock">${this.item_.arrangements[i].theTime}</span>
+                                <a href="#" class="map-card__link">More</a>
+                            </p>
+                        </div>
+                    </section>`;
+            }
+        }
+    }
+
+    var self = this;
+    var div = document.createElement('div');
+
+    if (this.item_.type != "point") {
+        div.className = "map-marker" + (this.item_.isActive?' map-marker_active':'') + (this.item_.near?' map-marker_not-focused':'');
+        div.innerHTML = `
+        <svg class="map-marker__pin${this.item_.type == 'appointment'?' map-marker__pin_appointment':(this.item_.type == 'closed'?' map-marker__pin_closed':'')}${this.item_.near ? ' map-marker__pin_sm' : ''}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 44">
+            <path class="map-marker__back" d="M18,1C8.6,1,1,8.7,1,18.1C1,29.4,12.1,34.7,13.4,36c1.4,1.3,2.6,4.2,3.1,5.8
+                c0.2,0.8,0.9,1.2,1.5,1.2s1.3-0.4,1.5-1.2c0.5-1.6,1.6-4.5,3.1-5.8C24,34.7,35,29.4,35,18.1C35,8.7,27.4,1,18,1z M18,22.8
+                c-2.6,0-4.6-2.1-4.6-4.7s2.1-4.7,4.6-4.7c2.6,0,4.6,2.1,4.6,4.7S20.6,22.8,18,22.8z"/>
+            <path class="map-marker__border" d="M18,1C8.6,1,1,8.7,1,18.1C1,29.4,12.1,34.7,13.4,36c1.4,1.3,2.6,4.2,3.1,5.8
+                c0.2,0.8,0.9,1.2,1.5,1.2s1.3-0.4,1.5-1.2c0.5-1.6,1.6-4.5,3.1-5.8C24,34.7,35,29.4,35,18.1C35,8.7,27.4,1,18,1z M18,22.8
+                c-2.6,0-4.6-2.1-4.6-4.7s2.1-4.7,4.6-4.7c2.6,0,4.6,2.1,4.6,4.7S20.6,22.8,18,22.8z"/>
+        </svg>
+        <aside class="map-marker__card">
+            <section class="map-card${this.item_.isActive?' map-card_active':''}">
+                <div class="map-card__img" style="background-image: url(${this.item_.imgUrl})"></div>
+                
+                <div class="map-card__data">
+                    <strong class="map-card__ttl">${this.item_.cardTtl}</strong>
+                    <p class="map-card__extra">
+                        <span class="map-card__time icon icon_clock">${this.item_.cardTime}</span>
+                        <a href="#" class="map-card__link">More</a>
+                    </p>
+                </div>
+                
+                <a href="javascript:void(0)" class="map-card__closer icon icon_cross"></a>
+            </section>
+            ${(arrangements)?`<section class="map-marker__arrangement-box">${arrangements}</section>`:''}
+        </aside>
+        ${label}`;
+    } else {
+        div.className = "map-marker map-marker_point";
+        div.innerHTML = `<span class="map-marker__point-label">${this.item_.cardTtl}</span>`;
+    }
+
+    this.div_ = div;
+    
+    var panes = this.getPanes();
+    panes.overlayImage.appendChild(div);
+
+    google.maps.event.addDomListener(div, "click", function(event) {
+        // TODO we should to set map-card_active here. Toggle used here for demo and simplification
+        div.children[1].children[0].classList.toggle('map-card_active');
+        div.children[1].parentElement.classList.toggle('map-marker_active');
+        google.maps.event.trigger(self, "click");
+    });
+}
+
+HTMLMarker.prototype.draw = function() {
+    var overlayProjection = this.getProjection();
+    var position = overlayProjection.fromLatLngToDivPixel(this.pos_);
+    // var panes = this.getPanes();
+    var div = this.div_;
+    
+    div.style.left = position.x -20 + 'px';
+    div.style.top = position.y -60 + 'px';
+}
+
+HTMLMarker.prototype.onRemove= function() {
+    this.div_.parentNode.removeChild(this.div_);
+    this.div_ = null;
+}
+</script>
+{% endblock %}

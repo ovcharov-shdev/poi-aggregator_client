@@ -1,0 +1,94 @@
+.tabbed-box {
+	&__tabs {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		font-size: 15px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1.6px;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+
+		&:after { // bottom line
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 3px;
+			background-color: #ecedf0;
+			border-radius: 2px 2px 0 0;
+		}
+	}
+
+	&__tab-item {
+
+	}
+
+	&__tab-link {
+		color: #8a8c90;
+		padding: 18px 34px;
+		overflow: hidden;
+		display: block;
+		position: relative;
+		transition: color .15s ease-in-out;
+
+		&:before { // icon
+			color: #d5d8e3;
+			display: inline-block;
+			vertical-align: middle;
+			margin: -3px 12px 0 0;
+			transition: color .15s ease-in-out;
+		}
+
+		&:after { // underline under active element
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: 10;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 3px;
+			background-color: #6a9fec;
+			border-radius: 2px 2px 0 0;
+			transform: translateY(5px);
+			transition: transform .15s ease-in-out;
+		}
+
+		&_active {
+			color: #5c96ec;
+			pointer-events: none;
+
+			&:after { // underline under active element
+				transform: translateY(0);
+			}
+		}
+
+		&_calend {
+
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #5c96ec;
+
+			&:before { // icon
+				color: lighten(#5c96ec,20%);
+			}
+		}
+	}
+
+	&__data {
+		padding: 20px;
+		background-color: #f9fafb;
+		border: 1px solid #ecedf0;
+		border-top: none;
+		border-radius: 0 0 8px 8px;
+	}
+}

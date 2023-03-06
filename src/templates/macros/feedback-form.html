@@ -1,0 +1,16 @@
+{% from "./form-control/input.html" import input %}
+{% from "./form-control/textarea.html" import textarea %}
+{% macro feedback_form(class, page) %}
+
+ {% if page == 'about' %}
+    <div class="feedback-form feedback-form_about">
+      <h3 class="feedback-form__title">Write to Us</h3>
+      <div class="feedback-form__text">If you have suggestions, questions or something other - please write to us and we’ll be glad to answer you.</div>
+      {{input(label='name', value='')}}
+      {{input(label='email', value='')}}
+      {{textarea(label='message', value='', message='', class='', icon='')}}
+      <button class=" btn btn_main btn_wide btn_feedback-about">Send</button>
+    </div>
+  {% endif %}
+
+{% endmacro %}

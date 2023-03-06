@@ -1,0 +1,161 @@
+.map-card {
+	border: 1px solid #fff;
+	border-radius: 5px;
+	box-shadow: 0.7px 0.7px 4px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.85);
+	padding: 4px 12px 3px 26px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	min-width: 200px;
+	max-width: 300px;
+	transition: min-width .15s ease-in-out, padding .15s ease-in-out;
+	position: relative;
+	z-index: 2;
+
+	&_active { // .map-card_active
+		min-width: 266px;
+		max-width: 266px;
+		padding: 0;
+	}
+
+	&_arrangement { // .map-card_arrangement
+		background: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #e3e3e2;
+			padding-bottom: 3px;
+			margin-bottom: 3px;
+		}
+	}
+
+	&__img {
+		width: 0;
+		overflow: hidden;
+		transition: width .15s ease-in-out;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		flex: none;
+
+		.map-card_active & {
+			width: 57px;
+		}
+	}
+
+	&__data {
+		padding: 0;
+		transition: padding .15s ease-in-out;
+		width: 100%;
+		min-height: 28px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.map-card_active & {
+			padding: 7px 12px 4px 12px;
+		}
+	}
+
+	&__ttl {
+		display: block;
+		color: #62656b;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 15px;
+		letter-spacing: .8px;
+		max-height: 30px;
+		overflow: hidden;
+		transition: color .15s ease-in-out, font-size .15s ease-in-out, line-height .15s ease-in-out;
+
+		.map-card_active & {
+			color: #333;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 16px;
+			max-height: 32px;
+			min-height: 32px;
+		}
+
+		&_desc,
+		.map-card_active &_desc {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 16px;
+			color: #999998;
+		}
+	}
+
+	&__extra {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height .15s ease-in-out, padding .15s ease-in-out;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+
+		.map-card_active & {
+			max-height: 15px;
+			padding: 3px 0 0 1px;
+			margin-left: -1px;
+		}
+	}
+
+	&__date {
+		color: #62656b;
+		font-size: 10px;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-right: 10px;
+	}
+
+	&__time {
+		color: #62656b;
+		font-family: Poppins;
+		font-size: 10px;
+		font-weight: 500;
+
+		&:before { // icon clock
+			color: #4fc73e;
+			font-size: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: -2px 5px 0 0;
+		}
+	}
+
+	&__link {
+		text-transform: uppercase;
+		margin-left: auto;
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 19px;
+		transition: color .25s ease-in-out;
+
+		&:hover {
+			color: #2a60c1;
+		}
+	}
+
+	&__closer {
+		opacity: 0;
+		transition: opacity .15s ease-in-out;
+		position: absolute;
+		top: -3px;
+		right: 0;
+		pointer-events: none;
+		color: #dee0e9;
+		font-size: 18px;
+
+		.map-card_active & {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}

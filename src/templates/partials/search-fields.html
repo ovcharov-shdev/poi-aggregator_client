@@ -1,0 +1,287 @@
+<app-filter-activities class="filter-head">
+	<app-county-filter class="form-control filter-head__input filter-head__input_box-of-tip form-control_btned">
+		{% if has_tip %}
+			<aside class="place-tip">
+				<div class="place-tip__ttl">Are you not from Haugesund Rogaland?</div>
+				<p class="place-tip__desc">
+					<a href=# class="place-tip__link" title="">Select</a> the county of your interest
+				</p>
+				<span class="place-tip__tie"></span>
+				<a href="javascript:void(0)" class="place-tip__close icon icon_cross" title=""></a>
+			</aside>
+		{% endif %}
+
+		<div>
+			
+			<div class="form-control__wrap">
+				<input class="form-control__input" type="text" required="required" placeholder="Select County" value="{{ search_fields[0] }}">
+				<label class="form-control__label">Select County</label>
+			</div>
+
+			<a class="form-control__btn{{' javascript-tip-opener' if has_tip }}" tabindex="100000" href="javascript:void(0)">
+				<i class="icon icon_map"></i>
+			</a>
+			
+			<i class="form-control__icon icon icon_spinner"></i>
+			<i class="form-control__icon icon icon_down show"></i>
+			<div class="tree tree_shown-">
+				<ejs-treeview class="e-control e-treeview e-fullrow-wrap" role="tree" tabindex="0">
+					<ul class="e-list-parent e-ul ">
+						
+						<li class="e-list-item e-level-1 e-node-focus" role="treeitem" data-uid="All" aria-level="1" aria-selected="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content">
+								<span class="e-list-text">All</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Østfold</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="02" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Akershus</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="03" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Oslo</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="04" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Hedmark</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="05" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Oppland</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="06" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Buskerud</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="07" aria-level="1" aria-selected="false" aria-expanded="false">
+							<div class="e-fullrow"></div>
+							<div class="e-text-content e-icon-wrapper">
+								<div class="e-icons e-icon-expandable"></div>
+								<span class="e-list-text">Vestfold</span>
+							</div>
+						</li>
+
+						<li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="08" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Telemark</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="09" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Aust-Agder</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="10" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Vest-Agder</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="11" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Rogaland</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="12" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Hordaland</span></div></li><li class="e-list-item e-level-1" role="treeitem" data-uid="13" aria-level="1" aria-selected="false"><div class="e-fullrow"></div><div class="e-text-content"><span class="e-list-text">Bergen</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="14" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Sogn og Fjordane</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="15" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Møre og Romsdal</span></div></li><li class="e-list-item e-level-1" role="treeitem" data-uid="16" aria-level="1" aria-selected="false"><div class="e-fullrow"></div><div class="e-text-content"><span class="e-list-text">Sør-Trøndelag</span></div></li><li class="e-list-item e-level-1" role="treeitem" data-uid="17" aria-level="1" aria-selected="false"><div class="e-fullrow"></div><div class="e-text-content"><span class="e-list-text">Nord-Trøndelag</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="18" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Nordland</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="19" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Troms - Romsa</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="20" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Finnmark - Finnmárku</span></div></li><li class="e-list-item e-level-1 e-has-child e-node-collapsed" role="treeitem" data-uid="50" aria-level="1" aria-selected="false" aria-expanded="false"><div class="e-fullrow"></div><div class="e-text-content e-icon-wrapper"><div class="e-icons e-icon-expandable"></div><span class="e-list-text">Trøndelag</span></div></li>
+					</ul>
+				</ejs-treeview>
+			</div>
+		</div>
+	</app-county-filter>
+
+	<app-date-range class="filter-head__input filter-head__input_date">
+		<div  class="posr">
+			<div class="icon icon-cross filter-head__clear-icon"></div>
+			<div class="icon icon_calend filter-head__clear-icon"></div>
+			<ejs-daterangepicker class="e-control e-daterangepicker">
+				<span class="e-input-group e-control-wrapper date-picker-input e-date-range-wrapper">
+					<input id="ej2-datetimepicker_0_input" class="e-input e-control e-keyboard" placeholder="Choose Date" value="{{search_fields[1]}}">
+					<span class="e-clear-icon e-clear-icon-hide" ></span>
+					<span class="e-input-group-icon e-range-icon e-icons"  aria-label="select"></span>
+					<input type="text" name="ej2-datetimepicker_0" style="display: none;"><input type="text" name="ej2-datetimepicker_0" style="display: none;">
+					<span class="date-picker-input__label">Choose Date</span>
+				</span>
+			</ejs-daterangepicker>
+		</div>
+	</app-date-range>
+
+	<app-range class="range-slider__wrap filter-head__slider">
+		<div class="range-slider__title">
+			<span >Age:</span> 
+			0 — 15+
+		</div>
+	
+		<ng5-slider class="range-slider ng5-slider">
+			
+			<span class="ng5-slider-span ng5-slider-bar-wrapper ng5-slider-left-out-selection">
+				<span class="ng5-slider-span ng5-slider-bar"></span>
+			</span>
+			
+			<span class="ng5-slider-span ng5-slider-bar-wrapper ng5-slider-right-out-selection" style="visibility: hidden;">
+				<span class="ng5-slider-span ng5-slider-bar"></span>
+			</span>
+
+			<span class="ng5-slider-span ng5-slider-bar-wrapper">
+				<span class="ng5-slider-span ng5-slider-bar"></span>
+			</span>
+
+			<span class="ng5-slider-span ng5-slider-bar-wrapper" style="visibility: visible; width: auto; left: 9px;">
+				<span class="ng5-slider-span ng5-slider-bar ng5-slider-selection"></span>
+			</span>
+
+			<span class="ng5-slider-span ng5-slider-pointer ng5-slider-pointer-min" aria-valuemin="0" aria-valuemax="16" role="slider" tabindex="0" style="left: 0px;"></span>
+
+			<span class="ng5-slider-span ng5-slider-pointer ng5-slider-pointer-max" aria-valuenow="16" aria-valuetext="16" aria-valuemin="0" aria-valuemax="16" role="slider" tabindex="0" style="right: 0;"></span>
+
+			<span class="ng5-slider-span ng5-slider-bubble ng5-slider-limit ng5-slider-floor" style="visibility: hidden; left: 0px;">0</span>
+
+			<span class="ng5-slider-span ng5-slider-bubble ng5-slider-limit ng5-slider-ceil" style="visibility: hidden; left: 145px;">16</span>
+
+			<span class="ng5-slider-span ng5-slider-bubble ng5-slider-model-value" style="visibility: hidden; left: 1px;">0</span>
+
+			<span class="ng5-slider-span ng5-slider-bubble ng5-slider-model-high" style="visibility: hidden; left: 145px;">16</span>
+
+			<span class="ng5-slider-span ng5-slider-bubble ng5-slider-combined" style="visibility: hidden;"></span>
+
+			<span class="ng5-slider-ticks">
+				<span class="ng5-slider-tick ng5-slider-selected" style="transform: translateX(0px);">
+					<ng5-slider-tooltip-wrapper >
+						<div class="ng5-slider-inner-tooltip"></div>
+					</ng5-slider-tooltip-wrapper>
+					<span class="ng5-slider-span ng5-slider-tick-legend">0</span>
+				</span>
+
+				<span class="ng5-slider-tick ng5-slider-selected" style="transform: translateX(10px);">
+					<ng5-slider-tooltip-wrapper >
+						<div class="ng5-slider-inner-tooltip"></div>
+					</ng5-slider-tooltip-wrapper>
+				</span>
+
+				<span class="ng5-slider-tick ng5-slider-selected" style="transform: translateX(19px);">
+					<ng5-slider-tooltip-wrapper >
+						<div class="ng5-slider-inner-tooltip"></div>
+					</ng5-slider-tooltip-wrapper>
+				</span>
+
+				<span class="ng5-slider-tick ng5-slider-selected" style="transform: translateX(29px);">
+					<ng5-slider-tooltip-wrapper>
+						<div class="ng5-slider-inner-tooltip"></div>
+					</ng5-slider-tooltip-wrapper>
+				</span>
+
+				<span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(38px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper>
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(48px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(57px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(67px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(76px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+<span class="ng5-slider-span ng5-slider-tick-legend">8</span>
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(86px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(95px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(105px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(114px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(124px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(133px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(143px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+
+			</span><span class="ng5-slider-tick ng5-slider-selected" ng-reflect-klass="ng5-slider-tick" ng-reflect-ng-class="[object Object]" style="transform: translateX(145px);" ng-reflect-ng-style="[object Object]">
+				<ng5-slider-tooltip-wrapper >
+
+
+			<div class="ng5-slider-inner-tooltip"></div>
+			</ng5-slider-tooltip-wrapper>
+		<span class="ng5-slider-span ng5-slider-tick-legend">15+</span>
+							</span>
+						</span>
+					</ng5-slider>
+	</app-range>
+
+	<app-keyword-filter class="form-control filter-head__input form-control_dark">
+		<app-input-control class="form-control">
+			<div class="form-control__wrap">
+				<input class="form-control__input" required="required" type="text" placeholder="Keywords"  value="{{ search_fields[2] }}">
+				<label class="form-control__label">Keywords</label>
+				<a class="form-control__icon form-control__icon_search icon icon_search" href="javascript:void(0)"></a>
+			</div>
+		</app-input-control>
+	</app-keyword-filter>
+
+</app-filter-activities>

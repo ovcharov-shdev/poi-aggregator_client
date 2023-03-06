@@ -1,0 +1,151 @@
+.hamburger-menu {
+	position: fixed;
+	z-index: 100000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(35, 38, 49, 0);
+	transition: background-color .25s ease-in-out;
+	display: none;
+	flex-direction: row;
+
+	@media (min-width: 691px) {
+		display: none;
+	}
+
+	&_shown {
+		display: flex;
+	}
+
+	&_active {
+		background-color: rgba(35, 38, 49, .5);
+	}
+
+	&__box {
+		background-color: #4798f3;
+		box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+		position: relative;
+		transform: translateX(-100%);
+		transition: transform .25s ease-in-out;
+
+		.hamburger-menu_active & {
+			transform: translateX(0);
+		}
+	}
+
+	&__scroll-box {
+		padding: 10px 30px 0;
+		max-height: calc(100vh ~"-" 103px);
+		overflow: auto;
+		border-top: 1px solid #5985c5;
+		box-shadow: inset 0 3px 5px rgba(27, 43, 68, 0.12);
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: #cee0f9;
+		font-size: 20px;
+		padding: 10px;
+		transition: color .15s ease-in-out;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #fff;
+		}
+	}
+
+	&__logo.logo__link {
+		font-size: 22px;
+		height: 60px;
+		text-shadow: 1px 1px 0 #5286d3;
+		padding: 15px 0 0 58px;
+		margin-left: -5px;
+		margin: 28px 30px 15px 22px;
+
+		&:after { // logo shadow
+			display: none;
+		}
+
+		.logo__slogan {
+			margin-top: 2px;
+			font-size: 5px;
+			color: #ccdefa;
+		}
+	}
+
+	&__list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		& & {
+			margin: 0 0 8px 17px;
+		}
+	}
+
+	&__item {
+
+	}
+
+	&__link {
+		color: #c8d9f8;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		display: inline-block;
+		padding: 12px 0;
+		transition: color .15s ease-in-out;
+
+		&:focus,
+		&:active,
+		&:hover {
+			color: #fff;
+		}
+
+		&_active {
+			color: #fff;
+			pointer-events: none;
+		}
+
+		&:before { // icon
+			font-size: 18px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: -3px 15px 0 0;
+
+			.icon_star& {
+				font-size: 21px;
+				margin-right: 13px;
+			}
+		}
+	}
+
+	&__label {
+		display: inline-block;
+		vertical-align: middle;
+		margin: -3px 0 0 10px;
+		background-color: #f09955;
+		border-radius: 2px;
+		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.04);
+		text-shadow: 0 3px 5px rgba(0, 0, 0, 0.19);
+		color: #fff;
+		font-size: 12px;
+		font-weight: 600;
+		padding: 2px 4px 3px;
+		text-align: center;
+	}
+
+	&__btn {
+		margin-bottom: 30px;
+
+		@media (max-width: 767px) {
+			display: block;
+			border-radius: 4px;
+		}
+	}
+}

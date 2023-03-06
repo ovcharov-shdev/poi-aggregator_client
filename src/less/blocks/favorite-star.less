@@ -1,0 +1,38 @@
+.favorite-star {
+	display: block;
+	position: relative;
+
+	&:after,
+	&:before { // active and inactive star icon
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-size: auto 100%;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		transition: opacity .25s ease-in-out;
+	}
+
+	&:before { // active star icon
+		background-image: url(../images/fav-icon_active.png);
+		opacity: 0;
+	}
+
+	&:after { // inactive star icon
+		background-image: url(../images/fav-icon_inactive.png);
+	}
+
+	&_active {
+		&:before { // active star icon
+			opacity: 1;
+		}
+
+		&:after { // inactive star icon
+			opacity: 0;
+		}
+	}
+}

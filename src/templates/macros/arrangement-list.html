@@ -1,0 +1,65 @@
+{% from "./arrangement_full.html" import arrangement as full_arrangement %}
+{% from "./arrangement_quick.html" import arrangement as quick_arrangement %}
+
+{% macro arrangement_list(calendar, arrangements, class='')%}
+
+{% set arrangement_config = [] %}
+{% for c in calendar %}
+	{% set sum = 0 %}
+	
+	{% for i in arrangements %}
+		{% if i.month == c.month and i.day == c.day %}
+			{% set sum = sum + 1 %}
+		{% endif %}
+	{% endfor %}
+
+	{% set arrangement_config = (arrangement_config.push(sum), arrangement_config) %}
+{% endfor %}
+
+	<ul class="arrangement-list__dates arrangement-date__box{{' ' + class if class}}">
+
+		{% for item_date in calendar %}
+			<li class="arrangement-date">
+				<div class="arrangement-date__ttl">
+					<span class="arrangement-date__day">{{item_date.day}}</span>
+					<span class="arrangement-date__month">{{item_date.month}}</span>
+					{%if item_date.year%}<span class="arrangement-date__year">{{item_date.year}}</span>{%endif%}
+					{%if item_date.isToday%}<span class="arrangement-date__today">(Today)</span>{%endif%}
+				</div>
+				
+				{% if arrangement_config[loop.index-1] > 0 %}
+
+					<ul class="arrangement-list__times arrangement-time__box">
+					{% for item in arrangements %}
+						{% if item.month == item_date.month and item.day == item_date.day %}
+							
+							<li class="arrangement-time__item">
+								<div class="arrangement-time__value">{{item.hours}}:{{item.minutes}}</div>
+								{% if item.type == "quick" %}
+									
+									{{quick_arrangement(text = item.quick_text, class = 'arrangement_overfill' if item.is_overflowed else '', parentActivity = item.parent_activity)}}
+
+								{% else %}
+									
+									{{full_arrangement(
+											age_tag = item.age_tag,
+											img_url = item.img_url, 
+											title = item.title, 
+											description = item.description, 
+											categories = item.categories,
+											class = '',
+											parentActivity = item.parent_activity)}}
+
+								{% endif %}
+							</li>
+						{% endif %}
+					{% endfor %}
+					</ul>
+
+				{% endif %}
+			</li>
+		{% endfor %}
+
+	</ul>
+	
+{% endmacro %}

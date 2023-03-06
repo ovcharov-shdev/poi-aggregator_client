@@ -1,0 +1,33 @@
+
+{% macro modal(options) %}
+	{#
+		options = {
+				title: '',
+				class: '',
+				subTitle: '',
+		}
+	#}
+	<aside class="modal__wrap">
+		<section class="modal__container">
+			<div class="modal{{ ' ' + options.class if options.class }}">
+				<a href="javascript:void(0)" class="modal__close icon icon_cross"></a>
+				{% if title %}
+				<div class="modal__head{% if options.btnHead %} modal__head_btn{% endif %}">
+					{% if options.title %}
+					<h3 class="modal__title">
+						{{options.title}}
+						{% if options.subTitle %}
+						<span class="modal__title-sub">{{options.subTitle}}</span>
+						{% endif %}
+					</h3>
+					{% endif %}
+				</div>
+				{% endif %}
+
+				{{ caller() }}
+				
+			</div>
+		</section>
+		<div class="modal__shadow"></div>
+	</aside>
+{% endmacro %}

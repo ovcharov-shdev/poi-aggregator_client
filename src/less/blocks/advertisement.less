@@ -1,0 +1,22 @@
+.advertisement {
+	display: inline-block;
+	width: 260px;
+	height: 620px;
+	background-image: url(../images/banner.jpg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+
+	@media (max-width: 767px) {
+		background-image: url(../images/banner_h.jpg);
+		background-size: 100% auto;
+		width: 100%;
+		max-width: 620px;
+		height: auto;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 41.93548387096774%;
+		}
+	}
+}

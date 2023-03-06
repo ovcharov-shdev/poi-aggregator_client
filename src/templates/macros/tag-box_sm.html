@@ -1,0 +1,71 @@
+{% macro tagBox(
+						data, 
+						age_tag = '', 
+						class = '', 
+						add_label = 'Add Filter Tags', 
+						options = '',
+						options_iconed = '',
+						editor_tag = ''
+) %}
+{#
+data = ['', '', ...]
+options =  = ['', '', ...]
+options_iconed = [{icon: '', name: ''}, ...]
+#}
+<ul class="tag__box tag__box_static tag__box_sm{{' ' + class if class != ''}}">
+	
+	{% if age_tag != '' %}
+		<li class="tag__item">
+			<span class="tag tag_age">{{ age_tag }}</span>
+		</li>
+	{% endif %}
+	
+	{% if editor_tag != '' %}
+		<li class="tag__item tag__item_category">
+			<span class="tag tag_editor">
+				Editor: {{ editor_tag }}
+			</span>
+		</li>
+	{% endif %}
+
+	{% for item in data %}
+		<li class="tag__item tag__item_category">
+			<div class="tag">{{ item }}</div>
+		</li>
+	{%  endfor %}
+
+	{% for item in options %}
+		<li class="tag__item tag__item_category">
+			<div class="tag tag_option">{{ item }}</div>
+		</li>
+	{%  endfor %}
+
+	{% for item in options_iconed %}
+		<li class="tag__item tag__item_category">
+			{% if not item.multi_tag %}
+				<div class="tag tag_option tag_iconed icon icon_{{item.icon}}">{{ item.name }}</div>
+			{% else %}
+				<div class="tag tag_option tag_iconed tag_expandable icon icon_{{item.icon}} icon-after_down tag-exp-menu__opener">{{ item.name }}</div>
+				<ul class="tag__exp-menu tag-exp-menu">
+					<li class="tag-exp-menu__item">
+						<div class="tag-exp-menu__link icon icon_snow">Winter</div>
+					</li>
+					<li class="tag-exp-menu__item">
+						<div class="tag-exp-menu__link icon icon_egg">Easter</div>
+					</li>
+					<li class="tag-exp-menu__item">
+						<div class="tag-exp-menu__link tag-exp-menu__link_disabled icon icon_leaf">Autumn</div>
+					</li>
+				</ul>
+			{% endif %}
+			}
+		</li>
+	{%  endfor %}
+	
+	{% if add_label != 'null' %}
+	<li class="tag__item">
+		<div class="tag__control">{{ add_label }}</div>
+	</li>
+	{% endif %}
+</ul>
+{% endmacro %}

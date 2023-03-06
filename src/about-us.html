@@ -1,0 +1,97 @@
+{% extends "./templates/decorators/barnasnorge.html" %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/feedback-form.html" import feedback_form %}
+
+{% block page_title %} Om BarnasNorge.no {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 2 %}
+{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container container_xs-bg-white">
+
+	<div class="content__nav content__nav_items-beetwen">
+		{{breadcrumbs(items=sitemap.home.about)}}
+		{{nav_tool(class='', for='about')}}
+	</div>
+
+	<div class="content content_about">
+		<div class="content__row">
+			<div class="content__editor content__editor-about">
+				<h2>Om BarnasNorge.no</h2>
+				<p><br />BarnasNorge.no tilbyr en landsdekkende oversikt over aktiviteter for barn i alderen 0 &ndash; 15 &aring;r.</p>
+				<p><br />De overordnede s&oslash;kekriteriene er fylke, aktivitetstype og periode. Tjenesten er gratis &aring; bruke.</p>
+				<p>&nbsp;</p>
+				<blockquote>
+					<p>BarnasNorge.no oppfordrer alle brukere av nettstedet til &aring; gj&oslash;re oss oppmerksom p&aring; nye aktiviteter, eller oppdatert informasjon om allerede registrerte aktiviteter. Vi &oslash;nsker dessuten ris og ros, ikke minst kommentarer
+						til hva du synes kunne tilf&oslash;yes eller endres for &aring; gj&oslash;re BarnasNorge.no enda bedre. Velg menypunktet &rdquo;Kontakt&rdquo; og send oss dine kommentarer.</p>
+				</blockquote>
+				<p><br />BarnasNorge.no er utviklet og driftes av Firma Peter F Tschudi, foretaksnummer 887 414 432, som ogs&aring; har eiendomsretten til hjemmesiden.</p>
+				<p><br />Det er ikke tillatt &aring; kopiere innhold fra BarnasNorge.no uten &aring; ha innhentet tillatelse. Les &rdquo;Betingelser for bruk av BarnasNorge.no&rdquo;</p>
+			</div>
+
+			{{ feedback_form(class='', page='about') }}
+		</div>
+
+		<div class="content__about-air-snakes"></div>
+
+
+		<!-- <h2 class="content__ttl content__ttl_left">Om BarnasNorge.no</h2> -->
+
+		<!-- <div class="content__about1">
+			<div class="content__ttl-desc content__ttl-desc_left">
+				BarnasNorge.no tilbyr en landsdekkende oversikt over aktiviteter for barn i alderen 0 – 15 år.
+			</div>
+			<div class="content__ttl-desc content__ttl-desc_left">
+				De overordnede søkekriteriene er fylke, aktivitetstype og periode. Tjenesten er gratis å bruke.
+			</div>
+
+			<div class="content__about-air-snakes"></div>
+		</div>
+
+		<div class="content__about2">
+			<div class="content__ttl-desc content__ttl-desc_left">
+				BarnasNorge.no oppfordrer alle brukere av nettstedet til å gjøre oss oppmerksom på nye aktiviteter, eller oppdatert informasjon om allerede registrerte aktiviteter. Vi ønsker dessuten ris og ros, ikke minst kommentarer til hva du synes kunne tilføyes eller endres for å gjøre BarnasNorge.no enda bedre. Velg menypunktet ”Kontakt” og send oss dine kommentarer.
+			</div>
+		</div>
+
+		<div class="content__about3">
+			<div class="content__ttl-desc content__ttl-desc_left">
+				BarnasNorge.no er utviklet og driftes av Firma Peter F Tschudi, foretaksnummer 887 414 432, som også har eiendomsretten til hjemmesiden.
+			</div>
+			<div class="content__ttl-desc content__ttl-desc_left">
+				Det er ikke tillatt å kopiere innhold fra BarnasNorge.no uten å ha innhentet tillatelse. Les ”Betingelser for bruk av BarnasNorge.no”
+			</div>
+		</div> -->
+
+
+
+		<img src='images/about-us/about-bg.png' style="" alt='about image' class="content__about-bg" />
+
+		<div class="content__about-footer">
+
+			<div class="content__footer-text">
+				BarnasNorge.no
+				<br />
+				v/ Firma Peter F Tschudi Org.nr. 887414432Tschudi
+			</div>
+			<div class="content__footer-text">
+				Tuengen allé 6C
+				<br />
+				0374 Oslo
+			</div>
+			<a class="content__footer-link" href="<a href=mailto:post@barnasnorge.no">post@barnasnorge.no</a>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

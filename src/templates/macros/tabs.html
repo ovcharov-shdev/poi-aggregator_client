@@ -1,0 +1,11 @@
+{% macro tabs(item_list, active_item, class='')%}
+	<nav class="nav-tabs__box">
+		<ul class="nav-tabs">
+			{% for i in item_list %}
+			<li class="nav-tabs__item">
+				<a href="#" class="nav-tabs__link{{' nav-tabs__link_active' if loop.index == active_item}}" title="">{{i}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endmacro %}

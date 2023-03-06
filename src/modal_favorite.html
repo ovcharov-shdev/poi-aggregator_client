@@ -1,0 +1,126 @@
+{% from "./templates/macros/modal.html" import modal %}
+{% from "./templates/macros/tag-box.html" import tagBox %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/activity-card.html" import activity %}
+
+{% set body_class = 'modal-open modal-content-show'%}
+
+{% include "./main001.html" %}
+
+{% block page_footer %}
+
+{% call modal({
+	title: '',
+	class: 'modal_lg modal_static',
+	buttons: [
+		{
+			text: 'Cancel'
+		},
+		{
+			text: 'Change',
+			type:'secondary'
+		}
+	]
+}) %}
+
+	<section class="modal__static-box">
+		<div class="modal__head">
+			<h3 class="modal__title">Favorite Activities <span class="modal__ttl-badge">5</span></h3>
+		
+			{{ select(label = 'Sort by:', options = ['Date', 'Age', 'Popularity', 'Featured', 'Mest For', 'Activity Title', 'Period', 'Postal Code'], active_option = 1, class="modal__ttl-sorter") }}
+		</div>
+		
+		<div class="modal__scroll-box">
+			<div class="activities-list activities-list_modaled">
+				<main class="activities-list__main">
+					{% for e in activities %}
+						{% if e.open_hours_type == "open" %}
+			
+							{% if not is_set_header_open %}
+								{% set is_set_header_open = true %}
+								<div class="activities-list__ttl activities-list__ttl_inform"><span class="activities-list__ttl-txt">Open today</span></div>
+							{% endif %}
+			
+							{{activity(item = e, class='activity-card_favorite')}}
+			
+						{% endif %}
+					{% endfor %}
+			
+					{% for e in activities %}
+						{% if e.open_hours_type == "appointment" %}
+			
+							{% if not is_set_header_warning %}
+								{% set is_set_header_warning = true %}
+								<div class="activities-list__ttl activities-list__ttl_warning">
+									<span class="activities-list__ttl-txt">OPEN BY APPOINTMENT</span></div>
+							{% endif %}
+			
+							{{activity(item = e, class='activity-card_favorite')}}
+			
+						{% endif %}
+					{% endfor %}
+			
+					{% for e in activities %}
+						{% if e.open_hours_type == "close" %}
+			
+							{% if not is_set_header_disable %}
+								{% set is_set_header_disable = true %}
+								<div class="activities-list__ttl activities-list__ttl_disable"><span class="activities-list__ttl-txt">Closed today</span></div>
+							{% endif %}
+			
+							{{activity(item = e, class='activity-card_favorite')}}
+			
+						{% endif %}
+					{% endfor %}
+				</main>
+			</div>
+		</div>
+		
+		<div class="modal__btns">
+			<button class="btn btn_main">Close</button>
+		</div>
+	</section>
+
+{% endcall %}
+
+<script>
+
+function open_modal() {
+	document.body.classList.add('modal-open');
+
+	setTimeout(function(){
+		document.body.classList.add('modal-content-show');
+	}
+		, 50);
+}
+
+function close_modal() {
+	document.body.classList.remove('modal-content-show');
+
+	setTimeout(function(){
+		document.body.classList.remove('modal-open');
+	}
+		, 350);
+}
+
+var cross_close = document.querySelector('.modal__close.icon_cross');
+cross_close.addEventListener('click', function() {
+	close_modal();
+});
+
+var shadow = document.querySelector('.modal__shadow');
+shadow.addEventListener('click', function() {
+	close_modal();
+});
+
+var modal_close = document.querySelector('.modal__buttons .button');
+modal_close.addEventListener('click', function() {
+	close_modal();
+});
+
+var open_link = document.querySelector('.js-demo-open-change-pass');
+open_link.addEventListener('click', function() {
+	open_modal();
+});
+</script>
+{% endblock %}

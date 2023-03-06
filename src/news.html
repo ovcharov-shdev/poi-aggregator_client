@@ -1,0 +1,50 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/tag-box.html" import tagBox %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/pagination.html" import pagination %}
+{% from "./templates/macros/activity-card.html" import activity %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/news.html" import news %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+	{% set header_type = "sm" %}
+	{% set nav_active = 2 %}
+	{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container">
+
+	<section class="content__nav">
+		{{breadcrumbs(items=sitemap.home.news)}}
+	</section>
+	<div class="news-grid">
+
+		<h2 class="news-grid__title">News</h2>
+
+		{{news(newsItems[0], "news_full-width")}}
+
+		{% for item in newsItems.slice(1) %}
+
+			{{news(new=item)}}
+
+		{% endfor %}
+
+		<footer class="news-grid__footer">
+			{{ select(label = 'Show:', options = ['25', '70', '150', 'All'], active_option = 1) }}
+
+			{{ pagination(page = ['1', '2', '3', '4', '51'], currentPage = 2) }}
+		</footer>
+
+	</div>
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% macro textarea(label, value, message, class, icon) %}
+{#  #}
+	<section class="form-control form-control_textarea{{" " + class if class}}">
+			<div class="form-control__wrap form-control__wrap_textarea">
+				<textarea class="form-control__textarea" type="text" required="required" placeholder="{{label}}" value="{{value}}"></textarea>
+				<label class="form-control__label">{{label}}</label>
+			</div>
+
+			{% if icon %}
+				<i class="form-control__icon icon icon_{{icon}} show"></i>
+			{% endif %}
+				<span class="form-control__message">{{message}}</span>
+	</section>
+{% endmacro %}

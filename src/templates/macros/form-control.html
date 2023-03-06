@@ -1,0 +1,15 @@
+{% macro input(label, value, message, class, icon) %}
+{#  #}
+	<section class="form-control {{" " + class if class}}">
+			<div class="form-control__wrap">
+
+				<input class="form-control__input" type="text" required="required" placeholder="{{label}}" value="{{value}}">
+				<label class="form-control__label">{{label}}</label>
+			</div>
+			
+			{% if icon %}
+			<i class="form-control__icon icon icon_{{icon}} show"></i>
+			{% endif %}
+			<span class="form-control__message">{{message}}</span>
+	</section>
+{% endmacro %}

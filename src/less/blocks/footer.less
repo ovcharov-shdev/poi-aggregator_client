@@ -1,0 +1,128 @@
+.footer {
+	overflow: hidden;
+	position: relative;
+	margin-top: 47px;
+
+	@media (max-width: 992px) {
+		margin-top: 20px;
+	}
+
+	&__bg {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #181a22 url(../images/footer_bg.jpg) calc( 50% ~"-" 70px) 100% repeat-x;
+
+		@media (max-width: 992px) {
+			background: #07080c url(../images/footer_bg.jpg) calc( 50% ~"-" 70px) -10px repeat-x;
+		}
+
+		@media (max-width: 767px) {
+			background: #07080c url(../images/footer_bg_sm.jpg) 0 0 no-repeat;
+		}
+	}
+
+	&__top {
+		background-color: #020303;
+		position: relative;
+		z-index: 20;
+	}
+
+	&__middle {
+		padding-top: 30px;
+		transition: max-height .25s ease-in-out, padding-top .25s ease-in-out;
+		max-height: 10000px;
+
+		.footer_collapsed & {
+			padding-top: 0;
+			max-height: 0;
+			overflow: hidden;
+		}
+
+		@media (max-width: 490px) {
+			padding-top: 0;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: row;
+		padding-top: 18px;
+		padding-bottom: 50px;
+
+		@media (max-width: 992px)	{
+			flex-direction: column-reverse;
+			padding-top: 90px;
+			position: relative;
+			padding-bottom: 30px;
+		}
+	}
+
+	&__top-nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&__logo-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__copyrights {
+		color: #a8a8a7;
+		font-size: 12px;
+		margin-bottom: 14px;
+
+		@media (max-width: 992px) {
+			text-align: center;
+		}
+	}
+
+	&__mail-link {
+		color: #a8a8a7;
+		position: relative;
+		display: inline-block;
+		text-shadow: -1px -1px 0 #121417, 1px -1px 0 #121417, -1px 1px 0 #121417, 1px 1px 0 #121417;
+		transition: color .15s ease-in-out;
+
+		&:after { // underscrore
+			content: '';
+			display: block;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 1px;
+			background-color: darken(#a8a8a7,10%);
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: lighten(#a8a8a7, 20%);
+		}
+	}
+
+	&__links-block {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding-top: 25px;
+
+		@media (max-width: 992px) {
+			justify-content: space-between;
+			padding-bottom: 50px;
+		}
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 0;
+		}
+	}
+}

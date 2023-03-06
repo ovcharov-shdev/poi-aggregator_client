@@ -1,0 +1,177 @@
+{% from "./nav-tool.html" import nav_tool %}
+
+{% macro mega_header(type, is_logged, stars = 2, nav, nav_index, sub_nav, sub_nav_index, search_fields, is_header_full, has_tip ) %}
+{# type = "xl | lg | md | sm" #}
+{# search_fields = Array(2) #}
+{% if type == "xl" %}
+	<header class="header{{ " header_" + type if type }}">
+		<div class="header__box">
+			<div class="container">
+				<section class="header__top">
+					<nav class="header__nav">
+						<a href="javascript:void(0)" class="header__mobile-menu"></a>
+						<ul class="top-nav">
+							{% for nav_item in nav %}
+								<li class="top-nav__item">
+									<a href="{{nav_item.url}}" class="top-nav__link{{" top-nav__link_active" if loop.index == nav_index }}" title="{{nav_item.title}}">
+										{{nav_item.name}}
+										{% if nav_item.badge %}
+											<span class="top-nav__badge">{{nav_item.badge}}</span>
+										{% endif %}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</nav>
+					<ul class="header__tool top-nav header-tool">
+						
+						{% if is_logged %}
+						<li class="header-tool__item">
+							<ul class="user-menu">
+								<li class="user-menu__item">
+									<a href="#" class="user-menu__link user-menu__link_user icon icon_user icon-after_down" title=""><span class="user-menu__text">Lev Tolstoy</span></a>
+								</li>
+								<li class="user-menu__item">
+									<a href="#" class="user-menu__link icon icon_user" title=""><span class="user-menu__text">Profile settings</span></a>
+								</li>
+								<li class="user-menu__item">
+									<a href="#" class="user-menu__link icon icon_event" title=""><span class="user-menu__text">Created activities</span><mark class="user-menu__warning">!</mark></a>
+								</li>
+								<li class="user-menu__item">
+									<a href="#" class="user-menu__link icon icon_add-event" title=""><span class="user-menu__text">Add new activity</span></a>
+								</li>
+								<li class="user-menu__item">
+									<a href="#" class="user-menu__link icon icon_logout" title=""><span class="user-menu__text">Logout</span></a>
+								</li>
+							</ul>
+						</li>
+						{% else %}
+						<li class="header-tool__item">
+							<a href="javascript:void(0)" class="top-nav__link header-tool__link header-tool__link_sign-in icon icon_sign-in">
+								Sign In
+							</a>
+						</li>
+						{% endif %}
+
+						<li class="header-tool__item">
+							<a href="javascript:void(0)" class="top-nav__link header-tool__link header-tool__link_star icon icon_star">
+								<span class="header-tool__badge">2</span>
+							</a>
+						</li>
+
+						<li class="header-tool__item">
+							<a href="https://www.facebook.com/pages/BarnasNorgeno/752814488118903" class="top-nav__link header-tool__link header-tool__link_facebook icon icon_fb" target="_blank"></a>
+						</li>
+					</ul>
+				</section>
+
+				<section class="header__middle">
+					<h1 class="header__logo logo">
+						<a href="#" class="logo__link" title="Go to home page">
+							BarnasNorge.no
+							<span class="logo__slogan">En aktivitetsportal for Dere MED BARN i Alderen 0-15 ar.</span>
+						</a>
+					</h1>
+					<button class="header__btn btn btn_main btn_iconed icon icon_add">Add new activity</button>
+				</section>
+			</div>
+
+			<section class="header__bottom">
+				<form class="container">
+					{% include "../partials/search-summary.html" %}
+					{% if is_header_full %}
+						{% include "../partials/search-fields_full.html" %}
+					{% else %}
+						{% include "../partials/search-fields.html" %}
+					{% endif %}
+				</form>
+			</section>
+		</div>
+
+		<section class="header__bg"></section>
+		<section class="header__clouds"></section>
+
+	</header>
+	<nav class="header__sub-nav">
+		<div class="container container_flex header__nav-scroll-box">
+			<ul class="sub-nav">
+				{% for nav_item in sub_nav %}
+				<li class="sub-nav__item">
+					<a href="{{nav_item.url}}" class="sub-nav__link{{" sub-nav__link_active" if loop.index == nav_index }}" title="{{nav_item.title}}">{{nav_item.name}}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			{{nav_tool()}}
+		</div>
+	</nav>
+{% endif %}
+
+{% if type == "sm" %}
+	<header class="header{{ " header_" + type if type }}">
+		<div class="header__box">
+			<div class="container">
+				<section class="header__top">
+					<nav class="header__nav">
+						<a href="javascript:void(0)" class="header__mobile-menu"></a>
+						<ul class="top-nav">
+							{% for nav_item in nav %}
+								<li class="top-nav__item">
+									<a href="{{nav_item.url}}" class="top-nav__link{{" top-nav__link_active" if loop.index == nav_index }}" title="{{nav_item.title}}">
+										{{nav_item.name}}
+										{% if nav_item.badge %}
+											<span class="top-nav__badge">{{nav_item.badge}}</span>
+										{% endif %}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</nav>
+					<ul class="header__tool top-nav header-tool">
+
+						<li class="header-tool__item">
+							<a href="javascript:void(0)" class="top-nav__link header-tool__link header-tool__link_sign-in icon icon_sign-in">
+								Sign In
+							</a>
+						</li>
+
+						<li class="header-tool__item">
+							<a href="javascript:void(0)" class="top-nav__link header-tool__link header-tool__link_star icon icon_star">
+								<span class="header-tool__badge">2</span>
+							</a>
+						</li>
+
+						<li class="header-tool__item">
+							<a href="https://www.facebook.com/pages/BarnasNorgeno/752814488118903" class="top-nav__link header-tool__link header-tool__link_facebook icon icon_fb" target="_blank"></a>
+						</li>
+					</ul>
+				</section>
+
+				<section class="header__middle">
+					<h1 class="header__logo logo">
+						<a href="#" class="logo__link logo__link_sm" title="Go to home page">
+							BarnasNorge.no
+							<span class="logo__slogan">En aktivitetsportal for Dere MED BARN i Alderen 0-15 ar.</span>
+						</a>
+					</h1>
+					<button class="header__btn btn btn_main btn_iconed icon icon_add">Add new activity</button>
+				</section>
+			</div>
+
+			<section class="header__bottom header__bottom_solid">
+				<form class="container">
+					{% include "../partials/search-summary.html" %}
+					{% if is_header_full %}
+						{% include "../partials/search-fields_full.html" %}
+					{% else %}
+						{% include "../partials/search-fields.html" %}
+					{% endif %}
+				</form>
+			</section>
+		</div>
+
+		<section class="header__bg header__bg_sm"></section>
+		<section class="header__clouds header__clouds_raised"></section>
+	</header>
+{% endif %}
+
+{% endmacro %}

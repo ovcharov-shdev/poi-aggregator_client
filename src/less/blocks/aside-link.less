@@ -1,0 +1,128 @@
+.aside-link {
+	display: inline-block;
+	align-self: flex-start;
+	padding-left: 30px;
+	position: relative;
+
+	@media (max-width: 767px) {
+		padding: 40px 10px 8px;
+	}
+
+	&:not(:last-of-type) {
+		margin-bottom: 20px;
+
+		@media (max-width: 767px) {
+			margin-bottom: 0;
+		}
+	}
+
+	&:before { // icon (if exist)
+		position: absolute;
+		top: 3px;
+		left: 0;
+		color: #e0e0e1;
+		transition: color .15s ease-in-out;
+
+		.aside-link:hover& {
+			color: #b0b2b5;
+		}
+
+		@media (max-width: 767px) {
+			top: 12px;
+			left: 50%;
+			transform: translateX(-50%);
+			color: #c5c7c9;
+		}
+	}
+
+	&__ttl {
+		color: #b9b9b9;
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 10px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		display: none;
+
+		.aside-link_ttled & {
+			display: block;
+		}
+
+		@media (max-width: 767px) {
+			display: block;
+			color: #62656b;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 15px;
+		}
+	}
+
+	&__value {
+		color: #62656b;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 1px;
+		transition: color .15s ease-in-out;
+
+		.aside-link:hover & {
+			color: #000;
+		}
+
+		&_native {
+			color: #377efd;
+			text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 2px, #c3d8fe 2px, #c3d8fe 3px, rgba(0, 0, 0, 0) 3px);
+			letter-spacing: normal;
+
+			.aside-link_ttled & {
+				font-size: 15px;
+			}
+
+			.aside-link:hover & {
+				color: #2d559c;
+			}
+		}
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	&_icon {
+		&_phone {
+
+		}
+
+		&_email {
+			&:before { // icon (if exist)
+				top: 0;
+				font-size: 19px;
+			}
+		}
+
+		&_website {
+			&:before { // icon (if exist)
+				top: 0;
+				font-size: 25px;
+				color: #cacaca;
+			}
+		}
+
+		&_pdf-doc {
+			&:before { // icon (if exist)
+				color: #5c96ec;
+				font-size: 20px;
+				top: 1px;
+
+				.aside-link:hover& {
+					color: #4f80ca;
+				}
+			}
+		}
+	}
+
+	&_ttled {
+		
+	}
+}

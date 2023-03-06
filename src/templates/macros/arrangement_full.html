@@ -1,0 +1,18 @@
+{% from "./tag-box_sm.html" import tagBox %} 
+{% macro arrangement(img_url, title, description, age_tag, categories, options, class = '', parentActivity) %}
+<div class="posr">
+	<a href="#" class="arrangement arrangement_full{{' arrangement_has-activity-link' if not parentActivity == '' }}{{' ' + class if class}}" title="">
+		<div class="arrangement__img" style="background-image: url({{img_url}});"></div>
+		<div class="arrangement__data">
+			<span class="arrangement__ttl">{{title}}</span>
+			<p class="arrangement__desc">{{description}}</p>
+			{{tagBox(age_tag = age_tag, data = categories, options = options, add_label = 'null', class = 'arrangement__tags' )}}
+			<span class="arrangement__link">More</span>
+		</div>
+	</a>
+	
+	{% if parentActivity %}
+		<a href="##" class="arrangement__activity-link" title=""><span class="arrangement__activity-at-text">at</span> <span class="arrangement__activity-link-text">{{parentActivity}}</span></a>
+	{% endif %}
+</div>
+{% endmacro %}

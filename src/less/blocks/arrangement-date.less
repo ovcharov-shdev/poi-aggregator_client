@@ -1,0 +1,78 @@
+.arrangement-date {
+	background-image: linear-gradient(to right, #a5b3bd 0, #a5b3bd 1px, #d8dce8 1px, #d8dce8 5px, #a5b3bd 5px, #a5b3bd 6px);
+	background-size: 6px 1px;
+	background-position: 10px 0;
+	background-repeat: repeat-y;
+	padding-bottom: 16px;
+
+	&:not(:last-child) {
+		padding-bottom: 26px;
+	}
+
+	&:last-child {
+		margin-bottom: -15px;
+
+		.arrangement-date__box_finished & {
+			background: none;
+		}
+	}
+
+	&__box {
+		list-style-type: none;
+		padding: 0 0 20px 38px;
+		margin: 0;
+
+		@media (max-width: 490px) {
+			padding-left: 26px;
+		}
+	}
+
+	&__ttl {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&__day {
+		display: block;
+		width: 26px;
+		height: 26px;
+		border-radius: 14px;
+		background-color: #5c96ec;
+		border: 2px solid #fff;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.19);
+		text-align: center;
+		line-height: 21px;
+		color: #fff;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__month,
+	&__year,
+	&__today {
+		display: inline-block;
+		color: #377efd;
+		font-family: Poppins;
+		font-size: 12px;
+		line-height: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-left: 7px;
+	}
+
+	&__year {
+		color: #121212;
+	}
+
+	&__today {
+		color: #abb1c7;
+	}
+}

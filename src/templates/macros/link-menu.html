@@ -1,0 +1,14 @@
+{% macro linkMenu(class, label, items, icon) %}
+
+<aside class="link-menu{{" " + class if class}}">
+	<a href="javascript:void(0)" class="link-menu__ttl icon icon_phone icon-after_down">{{ label }}</a>
+	<ul class="link-menu__list link-menu__list_command">
+		{% for item in items%}
+			<li class="link-menu__item">
+				<a href="javascript:void(0)" class="link-menu__link icon icon_phone">{{item}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</aside>
+
+{% endmacro %}

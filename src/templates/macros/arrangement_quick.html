@@ -1,0 +1,21 @@
+{% macro arrangement(text, class = '', parentActivity = '') %}
+<div class="posr">
+	<label class="arrangement arrangement_quick{{' ' + class if class}}{{' arrangement_has-activity-link' if not parentActivity == '' }}">
+		<input type="checkbox" class="arrangement__input">
+		<div class="arrangement__text-box">
+			{{text}}
+			
+			<div class="arrangement__btn-box">
+				<span href="javascript:void(0)" class="arrangement__btn" title="">
+					<span class="arrangement__btn-text arrangement__btn-text_more icon icon icon_arrow-down">Read More</span>
+					<span class="arrangement__btn-text arrangement__btn-text_less icon icon_arrow-down">Less</span>
+				</span>
+			</div>
+		</div>
+	</label>
+
+	{% if parentActivity %}
+		<a href="##" class="arrangement__activity-link" title=""><span class="arrangement__activity-at-text">at</span> <span class="arrangement__activity-link-text">{{parentActivity}}</span></a>
+	{% endif %}
+</div>
+{% endmacro %}

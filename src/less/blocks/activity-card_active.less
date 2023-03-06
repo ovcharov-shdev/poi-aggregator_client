@@ -1,0 +1,196 @@
+.activity-card_active {
+	@media (max-width: 767px) {
+		margin-top: 20px;
+		height: auto;
+		min-height: 300px;
+		max-height: 10000px;
+		padding-bottom: 75px;
+		cursor: default;
+		flex-direction: column;
+		overflow: visible;
+		position: relative;
+		backface-visibility: hidden;
+
+		.tag__box {
+			display: block;
+		}
+
+		.activity-card__ttl {
+			font-size: 16px;
+			letter-spacing: 0.76px;
+			line-height: 21px;
+			min-height: auto;
+		}
+
+		.activity-card__data {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.activity-card__description {
+			display: block;
+			max-height: 46px;
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		.activity-card__age-box {
+			display: none;
+		}
+
+		.activity-card__footer {
+			display: block;
+		}
+
+		.activity-card__footer-link.icon_schedule {
+			position: absolute;
+			top: -44px;
+			left: 0;
+			max-width: 86px;
+			color: #377efd;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 16px;
+			display: flex;
+			letter-spacing: 0.86px;
+			text-transform: none;
+		}
+
+		.activity-card__footer-link.icon_schedule::before {
+			color: #4a7cf5;
+			margin: 2px 7px 0 0;
+			font-size: 16px;
+		}
+
+		.activity-address__label {
+			display: none;
+		}
+
+		.activity-address__value {
+			display: block;
+			word-break: break-word;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 18px;
+			max-height: 36px;
+			overflow: hidden;
+			padding-left: 24px;
+			color: #4a7cf5;
+			transition: color .15s ease-in-out;
+
+			&:before {
+				content: "\e908";
+				.icomoon();
+				position: absolute;
+				top: 3px;
+				left: 0;
+				font-size: 15px;
+			}
+		}
+
+		.activity-card__map-link.activity-address {
+			height: 42px;
+			bottom: 49px;
+			left: 40%;
+			right: 15px;
+			color: #4a7cf5;
+			transition: color .15s ease-in-out;
+
+			&:hover {
+				.activity-address__value {
+					color: #4a7cf5;
+					background: none;
+					transition: color .15s ease-in-out;
+				}
+				
+			}
+		}
+
+		.activity-address__label.icon_map::before {
+			color: #4a7cf5;
+			margin: 3px 5px 0 0;
+			font-size: 16px;
+		}
+
+		.activity-card__tags {
+			height: 20px;
+			overflow: hidden;
+			margin-bottom: 10px;
+			position: relative;
+			padding-right: 20px;
+
+			@media (max-width:767px) {
+				margin-top: 6px;
+
+				&:before { // overflow arrow
+					cursor: pointer;
+					font-size: 10px;
+					color: #d5d8e3;
+					width: 15px;
+					height: 15px;
+					position: absolute;
+					right: 0;
+					bottom: 0;
+				}
+
+				&:after { // overflow arrow
+					content: '';
+					position: absolute;
+					right: 0;
+					width: 15px;
+					height: 15px;
+					margin-top: 0.2em;
+					background: white;
+				}
+			}
+		}
+
+		.tag__item {
+			margin: 0 3px 12px;
+
+			&:hover {
+				margin: 0 3px 12px;
+			}
+		}
+
+
+		.tag {
+			margin: 0back 3px 12px;
+			font-size: 9px;
+			height: 20px;
+			line-height: 21px;
+		}
+
+		.activity-card__footer {
+			padding-right: 0;
+
+			@media (max-width: 767px) {
+				bottom: 9px;
+			}
+		}
+
+		.activity-card__footer {
+			left: 15px;
+		}
+
+		.activity-card__buttons {
+			.btn {
+				margin: 6px 0 0;
+			}
+
+			.btn_secondary {
+				line-height: 1;
+				margin-left: 28px;
+			}
+		}
+
+		.activity-card__type {
+			transition: transform .15s ease-in-out, box-shadow 15s ease-in-out;
+
+			.activity-card-wrapper__inner_flipped & {
+				transform: translate(-60px, 10px);
+				box-shadow: none !important;
+			}
+		}
+	}
+}

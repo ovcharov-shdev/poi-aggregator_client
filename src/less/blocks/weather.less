@@ -1,0 +1,158 @@
+.weather {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+
+	&_loading {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	&__progress {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		width: 40%;
+		height: 4px;
+		background-color: #bed5f7;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity .15s ease-in-out;
+
+		.weather_loading ~ & {
+			opacity: 1;
+			animation-name: progress_bar;
+			animation-duration: 1.5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+	}
+
+	&__spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -50px;
+		margin-left: -75px;
+		display: block;
+		width: 140px;
+		height: 100px;
+		transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+		opacity: 0;
+		transform: translateX(200px);
+		pointer-events: none;
+		overflow: hidden;
+
+		@media (max-width: 767px) {
+			width: 70px;
+			height: 50px;
+			margin-top: -25px;
+			margin-left: -35px;
+		}
+
+		.weather_loading + & {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		&:before { // shadow
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50px;
+			background: linear-gradient(to right, rgba(252, 253, 254, 0.8), rgba(252, 253, 254, 0));
+
+			@media (max-width: 767px) {
+				width: 10px;
+			}
+		}
+
+		&:after { // shadow
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 50px;
+			background: linear-gradient(to left, rgba(252, 253, 254, 0.8), rgba(252, 253, 254, 0));
+
+			@media (max-width: 767px) {
+				width: 10px;
+			}
+		}
+	}
+
+	&__icon {
+		display: inline-block;
+		width: 105px;
+		height: 105px;
+		margin-right: 36px;
+
+		@media (max-width: 767px) {
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+			flex: none;
+		}
+	}
+
+	&__data {
+
+	}
+
+	&__value {
+		margin: 0 0 11px;
+
+		@media (max-width: 767px) {
+			margin: 0;
+		}
+	}
+
+	&__datetime {
+		margin: 0;
+		color: #989b9e;
+		font-size: 17px;
+		font-weight: 400;
+		line-height: 21px;
+
+		@media (max-width: 767px) {
+			font-size: 12px;
+		}
+	}
+
+	&__temp {
+		color: #62656b;
+		font-size: 51px;
+		font-weight: 400;
+		line-height: 34px;
+
+		@media (max-width: 767px) {
+			font-size: 28px;
+			line-height: 1;
+		}
+	}
+
+	&__desc {
+		color: #62656b;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 34px;
+
+		@media (max-width: 767px) {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+		}
+	}
+
+	&__day {
+		display: inline-block;
+		margin-right: 20px;
+	}
+}

@@ -1,0 +1,9 @@
+﻿{% macro checkbox(placeholder, check = false, class = "") %}
+    <div class="form-checkbox{{" " + class if class}}">
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" {% if check %} checked {% endif %}>
+            <span class="checkbox__icon"></span>
+            {{ placeholder }}
+        </label>
+    </div>
+{% endmacro %}

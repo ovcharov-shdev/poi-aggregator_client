@@ -1,0 +1,106 @@
+{% from "./templates/macros/modal.html" import modal %}
+{% from "./templates/macros/tabs.html" import tabs %}
+{% from "./templates/macros/form-control/input.html" import input %}
+{% from "./templates/macros/form-control/password.html" import password %}
+{% from "./templates/macros/form-control/checkbox.html" import checkbox %}
+
+
+{% set body_class = 'modal-open modal-content-show'%}
+
+{% include "./main001.html" %}
+
+{% block page_footer %}
+
+{% call modal({
+	title: '',
+	class: 'modal_xs modal_social-buttoned',
+	buttons: [
+		{
+			text: 'Cancel'
+		},
+		{
+			text: 'Change',
+			type:'secondary'
+		}
+	]
+}) %}
+
+	{{tabs(item_list = ['Log In', 'Sign Up', 'Restore'], active_item = 1)}}
+
+	{{input(label = "Email", value = "username@mail.com")}}
+
+	{{password(label = "Password")}}
+
+	{{checkbox(placeholder = "Remember me")}}
+	
+	<div class="modal__buttons">
+		<button class="btn btn_modal btn_default btn_iconed icon icon_key">
+			Authorize
+		</button>
+
+		<a href="javascript:void(0)" class="btn btn_modal btn_secondary">
+			No, thanks
+		</a>
+	</div>
+
+	<div class="modal__link-box">
+		<a href="#" class="modal__link" title="">I forgot my password</a>
+	</div>
+
+	<div class="social-button__box">
+		<ul class="social-button__list">
+			<li class="social-button__item">
+				<a href="#" class="social-button__link social-button__link_facebook icon icon_facebook" title="">via<br>Facebook</a>
+			</li>
+			<li class="social-button__item">
+				<a href="#" class="social-button__link social-button__link_google icon icon_google" title="">via<br>Google</a>
+			</li>
+			<li class="social-button__item">
+				<a href="#" class="social-button__link social-button__link_twitter icon icon_twitter" title="">via<br>Twitter</a>
+			</li>
+		</ul>
+	</div>
+
+{% endcall %}
+
+<script>
+
+function open_modal() {
+	document.body.classList.add('modal-open');
+
+	setTimeout(function(){
+		document.body.classList.add('modal-content-show');
+	}
+		, 50);
+}
+
+function close_modal() {
+	document.body.classList.remove('modal-content-show');
+
+	setTimeout(function(){
+		document.body.classList.remove('modal-open');
+	}
+		, 350);
+}
+
+var cross_close = document.querySelector('.modal__close.icon_cross');
+cross_close.addEventListener('click', function() {
+	close_modal();
+});
+
+var shadow = document.querySelector('.modal__shadow');
+shadow.addEventListener('click', function() {
+	close_modal();
+});
+
+var modal_close = document.querySelector('.modal__buttons .button');
+modal_close.addEventListener('click', function() {
+	close_modal();
+});
+
+var open_link = document.querySelector('.js-demo-open-change-pass');
+open_link.addEventListener('click', function() {
+	open_modal();
+});
+</script>
+{% endblock %}

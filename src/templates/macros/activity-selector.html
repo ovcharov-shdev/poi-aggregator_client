@@ -1,0 +1,10 @@
+{% macro activity_selector(isForChildren = true, class='')%}
+<ul class="selector{{' ' + class if class!=''}}">
+	<li class="selector__item{{" selector__item_active" if isForChildren}}">
+		Children
+	</li>
+	<li class="selector__item{{" selector__item_active" if not isForChildren}}">
+		Family
+	</li>
+</ul>
+{% endmacro %}

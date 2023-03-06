@@ -1,0 +1,131 @@
+.header-tool {
+
+	@media (max-width: 690px) {
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__link {
+		padding-left: 20px;
+		padding-right: 20px;
+		overflow: visible;
+
+		@media (max-width: 767px) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&_sign-in {
+
+			@media (max-width: 690px) {
+				display: none;
+			}
+
+			&:before { // icon sign-in
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 21px;
+				margin: -4px 14px 0 0;
+
+				@media (max-width: 767px) {
+					margin-right: 7px;
+				}
+			}
+		}
+
+		&_star {
+			position: relative;
+			padding-left: 15px;
+			padding-right: 15px;
+			transition: transform .15s ease-in-out;
+			transform: translate(0, 0);
+
+			&:hover {
+				transform: translate(0, -1px);
+			}
+
+			&:active:hover {
+				transform: translate(0, 0);
+			}
+
+			&:before { // icon star
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 28px;
+				margin: -7px 0 0;
+				color: #f8fbff;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, .02);
+
+				.header-tool__link_star:hover& {
+					text-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+				}
+			}
+		}
+
+		&_facebook {
+			display: inline-block;
+			width: 51px;
+			height: 71px;
+			background: url(../images/fb-link.png) 0 0 no-repeat;
+			padding: 0;
+			margin-right: -8px;
+			margin-left: 28px;
+			font-size: 25px;
+			padding: 16px 3px 0 0;
+			color: #fff;
+
+			&:hover,
+			&:active,
+			&:focus {
+				&:before { // icon f
+					transform: scale(1);
+					text-shadow: 0 0 4px rgba(0,0,0,0.3)
+				}
+			}
+
+			&:before { // icon f
+				transition: transform .15s ease-in-out, text-shadow .15s ease-in-out;
+				display: inline-block;
+				transform: scale(.8);
+				text-shadow: 0 0 2px rgba(0,0,0,0.2)
+			}
+
+			@media (max-width: 767px) {
+				margin-bottom: -8px;
+				margin-right: 0;
+				margin-left: 20px;
+
+				&:before { // icon f
+					margin-right: 8px;
+				}
+			}
+
+			@media (max-width: 690px) {
+				margin-left: 30px;
+			}
+		}
+	}
+
+	&__badge {
+		border-radius: 12px;
+		display: block;
+		min-width: 23px;
+		height: 23px;
+		background-image: linear-gradient(to top, #f98f33 0%, #ffc940 100%);
+		box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+		position: absolute;
+		top: 8px;
+		left: 33px;
+		text-shadow: 0 0 3px rgba(243, 143, 59, 0.29);
+		color: #fff;
+		font-size: 14px;
+		line-height: 14px;
+		font-weight: 600;
+		padding: 3px;
+		text-align: center;
+		white-space: nowrap;
+	}
+}

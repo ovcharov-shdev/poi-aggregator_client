@@ -1,0 +1,20 @@
+﻿{% macro pagination(page, currentPage, class='')%}
+    <div class="pagination__wrap{{' ' + class if class!=''}}">
+        <ul class="pagination">
+            <li class="pagination__item"><a href="javascript:void(0)" class="pagination__link pagination__link_prev" rel="prev" title="Go to previos page"></a></li>
+
+            {% for item in page %}
+                <li class="pagination__item">
+                    <a href="javascript:void(0)" class="pagination__link {%if loop.index == currentPage%} pagination__link_current {% endif %}" title="Go to page {{item}}">{{item}}</a>
+                </li>
+
+                {% if loop.revindex == 2 %}
+                    <li class="pagination__item"><span class="pagination__link">...</span></li>
+                {% endif %}
+            {% endfor %}
+
+            
+            <li class="pagination__item"><a href="javascript:void(0)" class="pagination__link pagination__link_next" rel="next" title="Go to next page"></a></li>
+        </ul>
+    </div>
+{% endmacro %}

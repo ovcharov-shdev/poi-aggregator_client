@@ -1,0 +1,64 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/tag-box.html" import tagBox %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/activity-selector.html" import activity_selector %}
+{% from "./templates/macros/activity-card_md.html" import activity %}
+{% from "./templates/macros/arrangement-list.html" import arrangement_list %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/pagination.html" import pagination %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 0 %}
+{% set is_collapse = false %}
+{% set search_county = "Møre og Romsdal" %}
+{% set search_date = "" %}
+{% set search_keywords = "" %}
+{% set search_catopt_filter = "2" %}
+{# end header config #}
+
+{% set body_class = "clear-mobile-back" %}
+{% set is_header_full = true %}
+
+{% block content %}
+
+<div class="container">
+	<section class="content__nav">
+		{{breadcrumbs( sitemap.home.activity, 'content__breadcrumbs' )}}
+		{{nav_tool('content__nav-tools nav-tool_content')}}
+	</section>
+	
+	<article class="content content_m0">
+		<h2 class="content__ttl content__ttl_left content__ttl_alone">Arrangements in Møre og Romsdal for <mark class="content__ttl-mark">Age <span class="content__ttl-val">4-15+</span></mark> filtered by word <mark class="content__ttl-mark">room</mark></h2>
+		
+		<div class="content__box">
+			<main class="content__main">
+				<header class="activities-list__header activities-list__header_arrangement">
+					<div class="activities-list__main-area">
+						<p class="tag__section-ttl">Filter BY CATEGORIES &amp; OPTIONS:</p>
+						
+						{{tagBox(data = ['Museums', 'Group'], add_label = 'Add Tags' )}}
+					</div>
+				</header>
+
+				{{arrangement_list(calendar = arrangement_list_calendar, arrangements = arrangements, class = '')}}
+				
+					<footer class="activities-list__footer arrangement-list__pagination-box">
+						<div class="activities-list__tool-area">
+							{{ select(label = 'Show:', options = ['25', '70', '150', 'All'], active_option = 2) }}
+						</div>
+						<div class="activities-list__main-area activities-list__main-area_pull-left">
+							{{ pagination(page = ['1', '2', '3', '4', '51'], currentPage = 2) }}
+					</div>
+				</footer>
+			</main>
+			<aside class="content__ad">
+				<a href="#" class="advertisement" title="Advertisement"></a>
+			</aside>
+		</div>
+	</article>
+</div>
+{% endblock %}

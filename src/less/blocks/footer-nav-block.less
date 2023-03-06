@@ -1,0 +1,96 @@
+.footer-nav-block {
+	flex-shrink: 0;
+	padding: 0 10px;
+
+	@media (min-width: 993px) {
+		&:not(:last-child) {
+			width: 25%;
+		}
+	}
+
+	@media (max-width: 992px) {
+		width: 33%;
+		text-align: center;
+	}
+
+	@media (max-width: 767px) {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	&__ttl {
+		color: #7b7b7e;
+		font-size: 12px;
+		text-transform: uppercase;
+		line-height: 12px;
+		margin-bottom: 20px;
+
+		@media (max-width: 767px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__links-box {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__link {
+		font-size: 13px;
+		line-height: 1.2;
+		color: #cdcecf;
+
+		&:active,
+		&:focus {
+			color: #cdcecf;
+			background-color: rgba(255,255,255,.1);
+		}
+
+		&:hover,
+		&:focus:hover,
+		&:active:hover {
+			text-decoration: underline;
+			color: #fff;
+		}
+
+		&_highling {
+			color: #b9baba;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-left: -5px;
+			position: relative;
+
+			&:before { // icon
+				display: inline-block;
+				font-size: 1.1em;
+				vertical-align: middle;
+				margin: -3px 4px 0;
+			}
+
+			&:after { // fire torch decor
+				content: '';
+				display: block;
+				width: 74px;
+				height: 72px;
+				background: url(../images/firetorch.png) 0 0 no-repeat;
+				position: absolute;
+				top: -24px;
+				left: -62px;
+				opacity: .8;
+				transition: opacity .15s ease-in-out;
+				animation: torch 4s infinite ease-in-out;
+
+				@media (max-width: 992px) {
+					display: none;
+				}
+			}
+		}
+	}
+}

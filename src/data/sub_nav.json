@@ -1,0 +1,18 @@
+{ 
+	"sub_nav": 
+	[
+		{
+			"name": "Activity List",
+			"title":"",
+			"url":"#"
+		}, {
+			"name": "Arrangement",
+			"title":"",
+			"url":"#"
+		}, {
+			"name": "On Map",
+			"title":"",
+			"url":"#"
+		}
+	]
+}

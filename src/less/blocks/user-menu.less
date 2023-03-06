@@ -1,0 +1,136 @@
+.user-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 0 0;
+	border-radius: 0 0 25px 25px;
+	overflow: hidden;
+	background-color: #5a9cd7;
+	box-shadow: inset 0 -2px 1px 1px rgba(0, 55, 155, .12), inset 0 4px 0 0 #214f73, inset 0 5px 0 0 #77aeda;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	transition: box-shadow .25s ease-in-out;
+
+	@media (max-width: 690px) {
+		display: none;
+	}
+
+	&_active {
+		box-shadow: inset 0 -2px 1px 1px rgba(0, 55, 155, .12), inset 0 4px 0 0 #214f73, inset 0 5px 0 0 #77aeda, 2.2px 2px 13px rgba(0, 0, 0, 0.13);
+	}
+
+	&__item {
+		transition: max-height .25s ease-in-out;
+		overflow: hidden;
+
+		&:first-child {
+			
+		}
+
+		&:not(:first-child) {
+			max-height: 0;
+		
+			.user-menu_active & {
+				max-height: 50px;
+			}
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #5490c6;
+		}
+	}
+
+	&__link {
+		display: block;
+		height: 50px;
+		padding: 15px 15px 15px 52px;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 500;
+		position: relative;
+		transition: background-color .25s ease-in-out;
+		white-space: nowrap;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: rgba(63, 255, 241, .15);
+			color: #fff;
+		}
+
+		&:before { // icon menu item
+			position: absolute;
+			top: 17px;
+			left: 15px;
+			color: #deebf7;
+			display: inline-block;
+			width: 25px;
+			text-align: center;
+
+			.icon_event& {
+				font-size: 17px;
+				margin-top: -2px;
+			}
+
+			.icon_add-event& {
+				font-size: 17px;
+				margin-top: -2px;
+			}
+		}
+
+		&_user {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&:before { // icon dropdown
+				color: #5694cc;
+				display: inline-block;
+				height: 25px;
+				background-color: #abcceb;
+				border: 2px solid #fff;
+				border-radius: 13px;
+				padding-top: 4px;
+				font-size: 13px;
+				margin-top: -4px;
+				box-shadow: 1px 1px 3px 0 rgba(0,0,0,.05);
+			}
+
+			&:after { // icon user
+				color: #cee1f3;
+				font-size: 10px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 10px;
+				transition: transform .25s ease-in-out;
+
+				.user-menu_active & {
+					transform: rotateZ(180deg);
+				}
+			}
+		}
+	}
+
+	&__text {
+		@media (max-width: 992px) {
+			display: inline-block;
+			max-width: 112px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	&__warning {
+		display: inline-block;
+		vertical-align: middle;
+		margin: -3px 0 0 11px;
+		background-color: #d14949;
+		border-radius: 3px;
+		color: #fbfbff;
+		font-size: 12px;
+		font-weight: 700;
+		padding: 2px 5px;
+	}
+}

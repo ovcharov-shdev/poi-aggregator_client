@@ -1,0 +1,13 @@
+{% extends "./_base.html"  %}
+{% from "../macros/mega-header.html" import mega_header as header %}
+{% from "../macros/footer.html" import footer as footer %}
+
+{% block page_body %}
+
+	{{ header(type = header_type, is_logged = header_is_logged, nav = top_nav, nav_index = nav_active, sub_nav = sub_nav, sub_nav_index = 1, search_fields = [search_county, search_date, search_keywords, search_catopt_filter], is_header_full = is_header_full, has_tip = header_has_tip ) }}
+	
+	{% block content %}{% endblock %}
+
+	{{ footer(nav = top_nav, nav_index = nav_active, is_collapse = is_collapse ) }}
+
+{% endblock %}

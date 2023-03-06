@@ -1,0 +1,94 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/tag-box.html" import tagBox %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/pagination.html" import pagination %}
+{% from "./templates/macros/activity-card.html" import activity %}
+{% from "./templates/macros/mobile-menu.html" import mobile_menu as mobile_search_panel %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+	{% set header_type = "xl" %}
+	{% set nav_active = 1 %}
+	{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container">
+	{% include "templates/partials/seo-link.html" %}
+	
+
+	<section class="activities-list">
+		<header class="activities-list__header">
+			<div class="activities-list__main-area">
+				<p class="tag__section-ttl">Filter BY CATEGORIES &amp; OPTIONS:</p>
+				
+				{{tagBox(data = ['Museums', 'Group'], add_label = 'Add Filter Tags', options = ['free'] )}}
+			</div>
+			<div class="activities-list__tool-area">
+				{{ select(label = 'Sort by:', options = ['Date', 'Age', 'Popularity', 'Featured', 'Mest For', 'Activity Title', 'Period', 'Postal Code'], active_option = 1) }}
+			</div>
+		</header>
+		
+		
+		<main class="activities-list__main">
+			{% for e in activities %}
+				{% if e.open_hours_type == "open" %}
+					
+					{% if not is_set_header_open %}
+						{% set is_set_header_open = true %}
+						<div class="activities-list__ttl activities-list__ttl_inform"><span class="activities-list__ttl-txt">Open today</span></div>
+					{% endif %}
+					
+					{{activity(item = e)}}
+				
+				{% endif %}
+			{% endfor %}
+			
+			{% for e in activities %}
+				{% if e.open_hours_type == "appointment" %}
+
+					{% if not is_set_header_warning %}
+						{% set is_set_header_warning = true %}
+						<div class="activities-list__ttl activities-list__ttl_warning">
+							<span class="activities-list__ttl-txt">OPEN BY APPOINTMENT</span></div>
+					{% endif %}
+
+					{{activity(item = e)}}
+
+				{% endif %}
+			{% endfor %}
+
+			{% for e in activities %}
+				{% if e.open_hours_type == "close" %}
+
+					{% if not is_set_header_disable %}
+						{% set is_set_header_disable = true %}
+						<div class="activities-list__ttl activities-list__ttl_disable"><span class="activities-list__ttl-txt">Closed today</span></div>
+					{% endif %}
+					
+					{{activity(item = e)}}
+
+				{% endif %}
+			{% endfor %}
+		</main>
+		
+		<footer class="activities-list__footer">
+			<div class="activities-list__tool-area">
+				{{ select(label = 'Show:', options = ['25', '70', '150', 'All'], active_option = 2) }}
+			</div>
+			<div class="activities-list__main-area activities-list__main-area_pull-left">
+				{{ pagination(page = ['1', '2', '3', '4', '51'], currentPage = 2) }}
+			</div>
+		</footer>
+	</section>
+</div>
+
+{% endblock %}
+
+{% block page_footer %}
+	{{ mobile_search_panel() }}
+	{% include "./templates/partials/hamburger.html" %}
+{% endblock %}

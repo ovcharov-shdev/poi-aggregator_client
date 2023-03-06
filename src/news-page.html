@@ -1,0 +1,40 @@
+{% extends "./templates/decorators/barnasnorge.html"  %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/news-content.html" import news_content %}
+
+{% block page_title %} Barnas Norge - aktiviteter for barn  {% endblock %}
+
+{# header config #}
+	{% set header_type = "sm" %}
+	{% set nav_active = 2 %}
+	{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container container_xs-bg-white">
+
+	<div class="content__nav">
+		{{breadcrumbs(items=sitemap.home.newspage)}}
+	</div>
+
+  <div class="content content_newspage">
+		<div class="content__nav">
+			{{nav_tool(class='', for='newspage')}}
+		</div>
+
+		{{news_content(newsPageContent)}}
+
+		<div class="content__nav">
+			{{nav_tool(class='nav-tool_extended-bottom', for='newspage')}}
+		</div>
+  </div>
+
+
+
+</div>
+
+{% endblock %}

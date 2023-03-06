@@ -1,0 +1,77 @@
+{% extends "./templates/decorators/barnasnorge.html" %}
+{% from "./templates/macros/form-control/select.html" import select %}
+{% from "./templates/macros/breadcrumbs.html" import breadcrumbs %}
+{% from "./templates/macros/nav-tool.html" import nav_tool %}
+{% from "./templates/macros/feedback-form.html" import feedback_form %}
+
+{% block page_title %} Betingelser for bruk av nettsted {% endblock %}
+
+{# header config #}
+{% set header_type = "sm" %}
+{% set nav_active = 2 %}
+{% set is_collapse = false %}
+{# end header config #}
+
+
+{% block content %}
+
+<div class="container container_xs-bg-white">
+
+	<div class="content__nav content__nav_items-beetwen">
+		{{breadcrumbs(items=sitemap.home.about)}}
+		{{nav_tool(class='', for='about')}}
+	</div>
+
+	<div class="content content_about">
+		<div class="content__editor">
+			<h2>Betingelser for bruk av BarnasNorge.no</h2>
+			<p>&nbsp;</p>
+			<p>Vennligst les betingelsene ("Betingelsene") n&oslash;ye f&oslash;r du bruker BarnasNorge.no<br />("Nettstedet"). Det er en forutsetning for bruk av Nettstedet at du er inneforst&aring;tt med, og<br />godkjenner, Betingelsene. I motsatt fall skal
+				vi be deg forlate Nettstedet</p>
+			<p><strong>Innhold</strong></p>
+			<p>Nettstedet tilstreber at innholdet til enhver tid er oppdatert og korrekt. Innholdet er imidlertid<br />meget omfattende og i stor grad basert p&aring; opplysninger gitt og/eller vedlikeholdt av andre.<br />Nettstedet kan derfor ikke garantere
+				for n&oslash;yaktigheten og kvaliteten av informasjonene. Alle<br />aktiviteter som publiseres p&aring; Nettstedet skal godkjennes av Nettstedets administrator f&oslash;r de<br />publiseres.</p>
+			<p><br />Brukere av Nettstedet aksepterer at denne er fritatt for alt ansvar som omfatter Nettstedets<br />innhold. Vi kan heller ikke innest&aring; for innholdet av eksterne nettsteder som er linket til<br />Nettstedet. Nettstedet p&aring;tar seg
+				ikke ansvar for tap av enhver art som m&aring;tte oppst&aring;, direkte<br />eller indirekte, som f&oslash;lge av bruken av Nettstedet eller informasjonene som finnes p&aring; den</p>
+			<p><br /><strong>Vi anbefaler alle &aring; kontrollere opplysningene p&aring; BarnasNorge.no med arrang&oslash;rens</strong><br /><strong>nettsted for den aktiviteten som planlegges bes&oslash;kt</strong></p>
+			<p><br /><strong>Arrang&oslash;rer</strong></p>
+			<p>Registrerte og ikke-registrerte brukere av Nettstedet kan legge inn informasjon om aktiviteter<br />de &oslash;nsker publisert p&aring; Nettstedet. Brukeren f&aring;r da ogs&aring; status som arrang&oslash;r (&rdquo;Arrang&oslash;ren&rdquo;).<br />Arrang&oslash;ren
+				har ansvar for at alle informasjoner i forbindelse med en aktivitet som registreres,<br />og som &oslash;nskes publisert, p&aring; Nettstedet, er korrekte. Nettstedets administrator forbeholder seg<br />rett til, etter en subjektiv vurdering,
+				&aring; slette aktiviteter som ikke er egnet for m&aring;lgruppen, som<br />er st&oslash;tende eller us&oslash;mmelige, eller som p&aring; annen m&aring;te ikke er forenlig med Nettstedet, uten<br />ytterligere begrunnelse. Administrator
+				forbeholder seg rett til &aring; endre i en aktivitet med<br />hensyn til rekkef&oslash;lgen av innholdet, herunder tekstavsnitt, tegnsetting, formatering og<br />oppstilling, men ikke i innholdet av tekstavsnitt uten godkjennelse fra
+				Arrang&oslash;ren</p>
+			<p><br />Alle r&aring;d, uttalelser, tjenester, tilbud, &aring;pen eller skjult reklame i form av anmeldelser eller<br />linker, eller annen informasjon eller innhold som er uttrykt eller gjort tilgjengelig p&aring;<br />Nettstedet er ikke et
+				uttrykk for Nettstedets holdninger eller synspunkter, men innholdet<br />tillates fordi det ikke vurderes &aring; st&aring; i motsetning til Nettstedets m&aring;lgruppe, etiske standard<br />eller krav til innhold. Det er imidlertid ingen garanti
+				mot at innhold sniker seg inn, som p&aring;<br />tross av en streng kvalitetskontroll ikke er forenlig med det Nettstedet st&aring;r for. Innholdet<br />fjernes s&aring; snart administrator oppdager, eller blir gjort oppmerksom p&aring;, slikt
+				innhold</p>
+			<p><br /><strong>Virus</strong></p>
+			<p>BarnasNorge.no tilstreber &aring; holde Nettstedet fri for virus. Brukeren b&oslash;r, for sin egen del,<br />iverksette generelle sikkerhetstiltak for &aring; forhindre overf&oslash;rsel av virus fra internettet til egen<br />computer</p>
+			<p><br /><strong>Opphavsrett</strong></p>
+			<p>Nettstedet eies og drives av Firma Peter F Tschudi (&rdquo;Eier&rdquo;), et personlig selskap registrert i<br />Foretaksregisteret i Br&oslash;nn&oslash;ysund. Organisasjonsnummer 887 414 432. Eier har opphavsretten<br />til Nettstedet og til
+				domenenavnet BranasNorge.no. Innhold p&aring; Nettstedet, av enhver art, m&aring;<br />ikke benyttes kommersielt, eller p&aring; annen m&aring;te kopieres, reproduseres, videresendes eller<br />distribueres, helt eller delvis, til offentlige eller
+				kommersielle form&aring;l, uten skriftlig tillatelse<br />fra Eier. Det er tillatt &aring; kopiere informasjon til privat ikke-kommersielt bruk. Nettstedet m&aring;<br />heller ikke kopieres til andre servere (&rdquo;Mirroring&rdquo;) eller
+				plasseres p&aring; tredjemanns<br />hjemmesider (&rdquo;Framing&rdquo;)</p>
+			<h6>Oppdatert 1. november 2014</h6>
+			<br/>
+		</div>
+
+		<div class="content__about-footer">
+
+			<div class="content__footer-text">
+				BarnasNorge.no
+				<br />
+				v/ Firma Peter F Tschudi Org.nr. 887414432Tschudi
+			</div>
+			<div class="content__footer-text">
+				Tuengen allé 6C
+				<br />
+				0374 Oslo
+			</div>
+			<a class="content__footer-link" href="<a href=mailto:post@barnasnorge.no">post@barnasnorge.no</a>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

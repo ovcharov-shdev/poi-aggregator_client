@@ -1,0 +1,144 @@
+.news-content {
+  max-width: 719px;
+  width: 100%;
+  padding-bottom: 52px;
+
+  &__image {
+    max-width: 719px;
+    max-height: 351px;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    color: #444444;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    margin: 0;
+    margin-bottom: 26px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__date {
+    color: #a2a2a2;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-right: 20px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #7c7c7c;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      width: 30px;
+      height: 34px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 10px;
+    }
+
+    &_admin {
+      &:before {
+        background-image: url('../images/news-page/admin-icon.png');
+      }
+    }
+
+  }
+
+  p {
+    color: #9fa1a5;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21.01px;
+    margin: 27px 0;
+  }
+
+  a {
+    font-size: 15px;
+  }
+
+  a:empty:after {
+    content: attr(href)
+  }
+
+  img{
+    margin: 25px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &_center {
+    margin: 0 auto;
+  }
+
+  @media(max-width:767px) {
+    padding: 0 15px;
+
+    &__image {
+      margin-bottom: 21px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: 0.8px;
+    }
+
+    &__date, &__author {
+      font-size: 12px;
+    }
+
+    &__title {
+      margin-bottom: 13px;
+    }
+
+  }
+
+  @media(max-width:490px) {
+    &__image {
+      width: 291px;
+      height: 200px;
+      margin-top: 12px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 23px 0;
+    }
+
+    a {
+      font-size: 12px;
+    }
+  }
+
+}

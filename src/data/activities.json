@@ -1,0 +1,180 @@
+{
+	"activities": [
+		{
+			"title": "AdventureRooms Oslo - Escape room",
+			"description": "Lei av at barna sitter med nesa i nettbrettet eller mobilen? Prøv en annerledes opplevelse hos AdventureRooms Oslo. Her må barn og voksne samarbeide og bruke logisk sans åspennende mysterier og knekke koder. Imens tikker klokka, og man har 60 minutter på å komme seg ut av rommet. Spillene passer for familier med barn over 9 år. AdventureRooms Oslo inneholder 3 rom med enkeltspill for mindre grupper og duellspill for større grupper. Duellspill handler om at 2 lag konkurrerer mot hverandre om hvem som kommer seg ut av rommet først",
+			"img": {
+				"url": "./images/activities/001.jpg",
+				"alt": "people search something",
+				"title": "open activity"
+			},
+			"categories": ["Active family", "Quest", "Group"],
+			"options": [],
+			"open_hours_type": "open",
+			"open_hours": "Open all period",
+			"age": "3-15+",
+			"isForChildren": true,
+			"isFavorited": true,
+			"address": "Nedre Slottsgate 23,",
+			"city":"OSLO",
+			"postal_code": "0157",
+			"footer" : {
+				"facebookUrl": "#"
+			},
+			"favoriteCount": 3,
+			"featuredCount": 405
+		},
+		{
+			"title": "BabySkrik og familieaktiviteter på Munchmuseet",
+			"description": "BabySkrik er et tilbud til barselgrupper, mødre eller fedre med baby en eller to onsdager i måneden. Museet forteller om bakgrunnen og tematikken i en utstilling, hvoretter ",
+			"img": {
+				"url": "./images/activities/002.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Museum", "Education"],
+			"options": [],
+			"open_hours_type": "open",
+			"open_hours": "Open all period",
+			"age": "3-15+",
+			"isForChildren": true,
+			"isFavorited": true,
+			"address": "Tøyengata 53,",
+			"city":"OSLO",
+			"postal_code": "0578",
+			"footer" : {
+				"webisteUrl": "barnskrik.no",
+				"facebookUrl": "#"
+			},
+			"favoriteCount": 17,
+			"featuredCount": 882
+		},
+		{
+			"title": "Frammuseet - et skip lastet med polarhistorie",
+			"description": "Hovedattraksjonene er polarskipene Fram og Gjøa, verdens mest kjente polarskuter, som står utstilt i hver sin hall. Man kan gå om bord i begge og gjøre sine egne oppdagels",
+			"img": {
+				"url": "./images/activities/003.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Museum", "History", "Group"],
+			"options": ["Indoor"],
+			"open_hours_type": "open",
+			"open_hours": "Open today",
+			"age": "1-3",
+			"isForChildren": false,
+			"isFavorited": false,
+			"address": "Bygdøynesveien 39,",
+			"city":"OSLO",
+			"postal_code": "0286",
+			"footer" : {
+				"webisteUrl": "houseofsecrets.no",
+				"phones": ["401 74 920"],
+				"facebookUrl": "#"
+			},
+			"favoriteCount": 31,
+			"featuredCount": 219,
+			"mobile_expand": true
+		},
+		{
+			"title": "House of Secrets Oslo - escape room",
+			"description": "To spill som passer for familier, med henholdsvis 2-4 og 2-6 spillere: 'Stopp viruset' og 'The Inventor's Legacy'. Barn under 14 år må være i følge med en ansvarlig voksen. Barn",
+			"img": {
+				"url": "./images/activities/004.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Active family", "Quest", "Group"],
+			"options": ["For Birthdays"],
+			"open_hours_type": "open",
+			"open_hours": "Open today",
+			"age": "10-15+",
+			"isForChildren": false,
+			"isFavorited": false,
+			"address": "Trondheimsveien 197 A,",
+			"city":"OSLO",
+			"postal_code": "0570",
+			"footer" : {
+				"webisteUrl": "houseofsecrets.no",
+				"phones": ["401 74 920"]
+			},
+			"favoriteCount": 17,
+			"featuredCount": 101
+		},		
+		{
+			"title": "Holmenkollbakken, Skimuseet, Skisimulator og Kollensvevet",
+			"description": "To spill som passer for familier, med henholdsvis 2-4 og 2-6 spillere: 'Stopp viruset' og 'The Inventor's Legacy'. Barn under 14 år må være i følge med en ansvarlig voksen. Barn",
+			"img": {
+				"url": "./images/activities/005.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Active family", "Quest", "Group"],
+			"options": ["For Birthdays"],
+			"open_hours_type": "appointment",
+			"open_hours": "Open By appointment",
+			"age": "5-15+",
+			"isForChildren": true,
+			"isFavorited": true,
+			"address": "Holmenkollbakken Kongeveien 5,",
+			"city":"OSLO",
+			"postal_code": "0787",
+			"footer" : {
+				"webisteUrl": "holmenkollen.com",
+				"phones": ["916 71 947"]
+			},
+			"favoriteCount": 223,
+			"featuredCount": 4878
+		},
+		{
+			"title": "Alna Ridesenter",
+			"description": "Alna Ridesenter er en stall med rideskole, aktivitetstilbud for barn og plasser for privathester i Oslo. Tre dager i uken er det 'Åpen Møteplass', et gratis fritids- og aktivitetstilbud",
+			"img": {
+				"url": "./images/activities/006.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Active family", "Horses"],
+			"options": ["For Birthdays"],
+			"open_hours_type": "appointment",
+			"open_hours": "Open By appointment",
+			"age": "0-15+",
+			"isForChildren": true,
+			"isFavorited": false,
+			"address": "Alnaparkveien 13,",
+			"city":"OSLO",
+			"postal_code": "1081",
+			"footer" : {
+				"webisteUrl": "alnaridesenter.no",
+				"phones": ["401 74 920", "897 23 787"]
+			},
+			"favoriteCount": 17,
+			"featuredCount": 275
+		},
+		{
+			"title": "Badedammen på Grorud",
+			"description": "Populær badedam med nær beliggenhet til parkeringsplass. Dammen er ca 150 meter lang med sand- og mudderbunn, demning med stige ned til vannet, gress og svaberg",
+			"img": {
+				"url": "./images/activities/007.jpg",
+				"alt": "",
+				"title": "open activity"
+			},
+			"categories": ["Active family", "Nature"],
+			"options": ["Free"],
+			"open_hours_type": "close",
+			"open_hours": "CLOSED TODAY",
+			"age": "0-15+",
+			"isForChildren": false,
+			"isFavorited": false,
+			"address": "Lillomarka Bergensveien 74,",
+			"city":"OSLO",
+			"postal_code": "0963",
+			"footer" : {
+				"webisteUrl": "oslo.kommune.no",
+				"phones": ["401 74 920", "897 23 787"]
+			},
+			"favoriteCount": 17,
+			"featuredCount": 275
+		}
+	]
+}

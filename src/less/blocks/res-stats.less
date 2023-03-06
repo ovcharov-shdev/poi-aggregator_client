@@ -1,0 +1,43 @@
+.res-stats {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 19px;
+	color: #c9cacc;
+
+	&__favorited {
+		margin-right: 23px;
+
+		@media (max-width: 490px) {
+			display: none;
+		}
+
+		&:before { // icon
+			display: inline-block;
+			vertical-align: middle;
+			color: #ffcf51;
+			font-size: 1.3em;
+			margin: -5px 6px 0 0;
+		}
+	}
+
+	&__featured {
+		@media (max-width: 490px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 12px;
+		}
+
+		&:before { // icon
+			display: inline-block;
+			vertical-align: middle;
+			color: #d9dadb;
+			font-size: .85em;
+			margin: -1px 8px 0 0;
+
+			@media (max-width: 490px) {
+				margin: 0;
+			}
+		}
+	}
+}

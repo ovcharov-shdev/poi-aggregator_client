@@ -1,0 +1,32 @@
+{% macro select(label, message, class, icon = 'down', options, active_option = 1) %}
+{# options = [] #}
+	<section class="form-select{{' ' + class if class!=''}}">
+			<label class="form-select__label">{{label}}</label>
+			<div class="form-select__box">
+
+				<a href="javascript:void(0)" class="form-select__input">{{options[active_option - 1]}}</a>
+
+				<span class="form-select__message">{{message}}</span>
+
+				{% if icon %}
+				<i class="form-select__icon icon icon_{{icon}} show"></i>
+				{% endif %}
+
+				<ul class="form-select__options-list form-select__options-list_fake">
+					{% for item in options %}
+					<li class="form-select__item">
+						<span class="form-select__option" title="Sort activities list by {{item}}">{{item}}</span>
+					</li>
+					{% endfor %}
+				</ul>
+
+				<ul class="form-select__options-list">
+					{% for item in options %}
+					<li class="form-select__item">
+						<a href="#" class="form-select__option{{" form-select__option_active" if loop.index == active_option}}" title="Sort activities list by {{item}}">{{item}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+	</section>
+{% endmacro %}

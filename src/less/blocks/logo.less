@@ -1,0 +1,170 @@
+.logo {
+	&__link {
+		display: inline-block;
+		font-family: 'Lato';
+		font-weight: 900;
+		font-style: normal;
+		color: #fff;
+		font-size: 38px;
+		text-shadow: 2.2px 2px 0 rgba(55, 126, 253, 0.4);
+		height: 141px;
+		background: url("../images/logo.png") 0 0 no-repeat;
+		background-size: auto 100%;
+		padding: 36px 0 0 136px;
+
+		&:after { // sun shadow
+			content: '';
+			pointer-events: none;
+			display: block;
+			width: 713px;
+			height: 554px;
+			background-image: radial-gradient(#8fb7f2 0%, #5c96ec 66%);
+			background-position: 50% -133px;
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: -1;
+			top: -66px;
+			left: -300px;
+			@media (max-width: 992px) {
+				height: 300px;
+				background-position: 50% -36px;
+			}
+			@media (max-width: 767px) {
+				top: -58px;
+			}
+			@media (max-width: 490px) {
+				left: -100px;
+				width: 270px;
+			}
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: #fff;
+		}
+
+		@media (max-width: 767px) {
+			font-size: 27px;
+			height: 102px;
+			padding: 26px 0 0 98px;
+		}
+
+		&_footer {
+			font-size: 32px;
+			text-shadow: none;
+			height: 93px;
+			padding: 26px 0 0 90px;
+			position: relative;
+			z-index: 10;
+
+			@media (max-width: 767px) {
+				height: 80px;
+				padding: 23px 0 0 80px;
+			}
+
+			&:after { // sun shadow
+				display: none;
+			}
+		}
+
+		&_sm {
+	  		&:after { // sun shadow for header_sm
+					height: 443px;
+			}
+		}
+
+		&_fixed {
+			height: 56px;
+			padding: 11px 0 0 60px;
+			font-size: 25px;
+			text-shadow: 2.2px 2px 0 rgba(43, 135, 31, 0.4);
+
+			&:after { // sun shadow for header_sm
+				display: none;
+			}
+
+			@media (max-width: 767px) {
+				height: 56px;
+				padding: 11px 0 0 60px;
+				font-size: 25px;
+			}
+
+			@media (max-width: 490px) {
+				height: 50px;
+				font-size: 18px;
+				padding: 15px 0 0 48px;
+				margin-left: -5px;
+			}
+
+			@media (max-width: 378px) {
+				margin-left: -8px;
+			}
+		}
+	}
+
+	&__slogan {
+		display: block;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 700;
+		color: #e7effc;
+		font-size: 10px;
+		text-shadow: 2.2px 2px 0 rgba(55, 126, 253, 0.4);
+		text-transform: uppercase;
+
+		&_footer {
+			font-size: 8px;
+			font-weight: 600;
+			text-shadow: none;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		@media (max-width: 767px) {
+			font-size: 9px;
+		}
+	}
+
+	&_footer {
+		position: relative;
+		margin-bottom: 0;
+		@media (max-width: 992px) {
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&:after { // footer sun shadow
+			content: '';
+			pointer-events: none;
+			display: block;
+			width: 400px;
+			height: 400px;
+			background-image: radial-gradient(rgba(245,236,43,.25) 0%, rgba(0,0,0,0) 66%);
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: 5;
+			top: -147px;
+			left: -177px;
+			@media (max-width: 767px) {
+				opacity: 0.8;
+			}
+		}
+
+		&:before { // shadow above sun
+			content: '';
+			width: 400px;
+			height: 200px;
+			background: linear-gradient(#181a22, rgba(0,0,0,0)) 0 0 no-repeat;
+			position: absolute;
+			z-index: 10;
+			left: -150px;
+			top: -120px;
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+	}
+}
