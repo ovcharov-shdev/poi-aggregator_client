@@ -1,153 +1,288 @@
 {% extends "./templates/decorators/_base.html"  %}
 
 {% block page_title %}
-	{{ title.main }}
+{{ title.main }}
 {% endblock %}
 
 {% block page_body %}
 <div class="container">
-	<section class="index-ready-status">
-		<a name="frontpage"></a>
-		<h1 class="index-hdr">Main Pages</h1>
-		<ul class="index-list">
-			<li class="index-item"><a class="index-link" href="./main001.html">Frontpage</a></li>
-			<li class="index-item"><a class="index-link" href="./activity001.html">Activity Page</a></li>
-			<li class="index-item"><a class="index-link" href="./main001_logged.html">User was logged in</a></li>
-			<li class="index-item"><a class="index-link" href="arrangement.html">Arrangement List</a></li>
-			<li class="index-item"><a class="index-link" href="arrangement002.html">Arrangement List (Search process)</a></li>
-			<li class="index-item"><a class="index-link" href="./on-map.html">On Map</a></li>
-			<li class="index-item"><a class="index-link" href="./informer.html">Informer</a></li>
-			<li class="index-item"><a class="index-link" href="./areyourhere.html">Are you here?</a></li>
-		</ul>
-
-	</section>
-
-	<section class="index-notready-status">
-		<a name="news"></a>
-		<h1 class="index-hdr">News</h1>
-		<ul class="index-list">
-			<li class="index-item"><a class="index-link" href="./news.html">News List</a></li>
-			<li class="index-item"><a class="index-link" href="./news-page.html">News Page</a></li>
-		</ul>
-
-		<a name="static"></a>
-		<h1 class="index-hdr">Static Pages</h1>
-		<ul class="index-list">
-			<li class="index-item"><a class="index-link" href="./about-us.html">About Us</a></li>
-			<li class="index-item"><a class="index-link" href="./terms-of-using.html">Terms of Using</a></li>
-			<li class="index-item"><a class="index-link" href="./privacy-policy.html">Privacy Policy</a></li>
-		</ul>
-
-		<a name="modal"></a>
-		<h1 class="index-hdr">Modal Pages</h1>
-		<ul class="index-list">
-			<li class="index-item"><a class="index-link" href="./modal_sign-01.html">Log In</a></li>
-			<li class="index-item"><a class="index-link" href="modal_sign-02.html">Sign Up</a></li>
-			<li class="index-item"><a class="index-link" href="modal_sign-03.html">Password Restore</a></li>
-			<li class="index-item"><a class="index-link" href="./modal_favorite.html">Favorite</a></li>
-		</ul>
-	</section>
+    <ul class="index-list">
+        <li class="index-list__elem">
+            <a href="./main001.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/frontpage.jpg" alt="Frontpage">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Frontpage</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./activity001.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/activity-page.jpg" alt="Activity Page">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Activity Page</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./main001_logged.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/frontpage-logged-user.jpg" alt=">User was logged in">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">User was logged in</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./arrangement.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/arrangement.jpg" alt="Arrangement List">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Arrangement List</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./arrangement002.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/arrangement2.jpg" alt="Arrangement List (Search process)">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Arrangement List <br>(Search process)</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./informer.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/informer.jpg" alt="Informer">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Informer</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./areyourhere.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/are-you-here.jpg" alt="Are you here?">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Are you here?</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./news.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/news.jpg" alt="News List">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">News List</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./news-page.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/news-page.jpg" alt="News Page">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">News Page</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./about-us.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/about-us.jpg" alt="About Us">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">About Us</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./terms-of-using.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/terms-of-using.jpg" alt="Terms of Using">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Terms of Using</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./privacy-policy.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/privacy-policy.jpg" alt="Privacy Policy">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Privacy Policy</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./modal_sign-01.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/modal-log-in.jpg" alt="Log In">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Log In</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./modal_sign-02.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/modal-sign-up.jpg" alt="Sign Up">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Sign Up</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./modal_sign-03.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/modal-password-restore.jpg" alt="Password Restore">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Password Restore</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="index-list__elem">
+            <a href="./modal_favorite.html" target="_blank" class="index-list__link">
+                <figure class="index-list__panel">
+                    <div class="index-list__image-box">
+                        <img class="index-list__image" src="images/index/modal-favorite.jpg" alt="Favorite">
+                    </div>
+                    <figcaption>
+                        <p class="index-list__title">Favorite</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+    </ul>
 </div>
 
+<style>
+    .index-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 24px;
+        padding: 40px 0;
+        margin: 0;
+        list-style-type: none;
+    }
 
+    @media (min-width: 564px) {
+        .index-list {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 24px;
+        }
+    }
 
-	<style>
-	.index-hdr {
-		font-size: 20px;
-		margin: 15px 0;
-	}
+    @media (min-width: 768px) {
+        .index-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
-	.index-list {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		list-style-type: none;
-		padding: 15px;
-		margin: 0 -15px 15px;
-		background-color: #fafafa;
-		border-radius: 4px;
-	}
+    @media (min-width: 1024px) {
+        .index-list {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
 
-	.index-link {
-		display: inline-flex;
-		font-weight: 400;
-		width: 220px;
-		height: 50px;
-		margin: 7px;
-		border: 1px solid #000;
-		padding: 10px 20px;
-		justify-content: center;
-		align-items: center;
-		border-radius: 5px;
-		text-align: center;
-		text-decoration: none;
-		transition: color ease-in-out .15s, background-color ease-in-out .15s;
-	}
+    .index-list__elem {
+    }
 
-	.index-link_disabled {
-		opacity: .4;
-		pointer-events: none;
-	}
+    .index-list__link {
+        display: block;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+        color: #353C41;
+        transition: color 0.3s ease;
+    }
 
-	.index-link:hover {
-		border: 1px solid #000;
-		background-color: #000;
-		color: #fafafa;
-		text-decoration: none;
-	}
+    .index-list__link:hover {
+        color: #74aa50;
+    }
 
-	.index-ready-status {
-		position: relative;
-	}
+    .index-list__panel {
+    }
 
-	.index-ready-status:before {
-		content: '';
-		display: block;
-		width: 7px;
-		background-color: #7fdc72;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: -35px;
-		border-radius: 3px 0 0 3px;
-	}
+    .index-list__image-box {
+        position: relative;
+        margin-bottom: 16px;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+    }
 
-	.index-ready-status:after {
-		content: 'Ready';
-		font-size: 10px;
-		font-weight: 900;
-		text-transform: uppercase;
-		color: #ccc;
-		position: absolute;
-		top: 0;
-		left: -26px;
-	}
+    .index-list__image-box::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+        content: "";
+    }
 
-	.index-notready-status {
-		position: relative;
-	}
+    .index-list__link:hover .index-list__image-box {
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
 
-	.index-notready-status:before {
-		content: '';
-		display: block;
-		width: 7px;
-		background-color: #ffcba5;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: -35px;
-		border-radius: 3px 0 0 3px;
-	}
+    .index-list__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-	.index-notready-status:after {
-		content: 'Coming soon';
-		font-size: 10px;
-		font-weight: 900;
-		text-transform: uppercase;
-		color: #ccc;
-		position: absolute;
-		top: 0;
-		left: -26px;
-	}
+    .index-list__title {
+        margin: 0;
+    }
 </style>
+
+
 {% endblock %}
